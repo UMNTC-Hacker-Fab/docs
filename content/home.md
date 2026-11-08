@@ -1,4 +1,4 @@
-# Minnesota Nanofabrication Docs
+# UMN Hacker Fab Docs
 
 ## Start here
 

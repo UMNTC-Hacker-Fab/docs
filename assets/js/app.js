@@ -225,7 +225,7 @@
     enhance(doc, file || "404.md");
     doc.dataset.loaded = path;
     const h1 = doc.querySelector("h1");
-    document.title = (h1 ? h1.textContent + " · " : "") + "Nanofab Docs";
+    document.title = (h1 ? h1.textContent + " · " : "") + "UMN Hacker Fab Docs";
     syncSidebar(path);
     renderChrome(path, file);
     buildToc(doc);

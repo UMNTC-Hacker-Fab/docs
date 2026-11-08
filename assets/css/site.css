@@ -1,5 +1,5 @@
 /* =====================================================================
-   Minnesota Nanofabrication Docs
+   UMN Hacker Fab Docs
    Style after GitBook / docs.hackerfab.org: light page, flat sidebar
    with rounded highlighted items and page emoji, bold titles, rounded
    cards and hints, "On this page" outline, prev/next cards.
@@ -65,9 +65,10 @@ kbd {
   border-bottom: 1px solid var(--line);
 }
 .topbar-inner { height: 100%; display: flex; align-items: center; gap: 16px; padding: 0 24px; }
-.brand { display: flex; align-items: center; gap: 12px; color: var(--ink); text-decoration: none; min-width: 0; }
-.brand img { flex: none; width: 32px; height: 32px; border-radius: 8px; }
-.brand span { font-size: 17px; font-weight: 600; letter-spacing: -.015em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.brand { display: flex; align-items: center; gap: 8px; color: var(--ink); text-decoration: none; min-width: 0; }
+/* the logo file has ~16% white padding on each side; trim it with negative margins */
+.brand img { flex: none; width: 56px; height: 56px; margin: 0 -9px; }
+.brand span { font-size: 21px; font-weight: 600; letter-spacing: -.015em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .topbar-right { display: flex; align-items: center; gap: 8px; margin-left: auto; }
 .search-trigger {
   display: flex; align-items: center; gap: 10px; width: 260px; height: 38px; padding: 0 8px 0 12px;
@@ -273,7 +274,8 @@ kbd {
   .page { padding: 28px 16px 72px; }
 }
 @media (max-width: 560px) {
-  .brand span { font-size: 15px; }
+  .brand span { font-size: 18px; }
+  .brand img { width: 46px; height: 46px; margin: 0 -7px; }
   .doc h1 { font-size: 28px; }
   .doc .h1-icon { font-size: 26px; }
   .pager { grid-template-columns: 1fr; }
