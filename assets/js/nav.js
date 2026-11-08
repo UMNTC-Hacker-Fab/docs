@@ -32,7 +32,7 @@
         {
           icon: "📝", title: "Updates", path: "updates", dir: true,
           children: [
-            { title: "Leonard Jin", path: "updates/leonard-jin" },
+            { title: "Leonard Jin", path: "updates/leonard-jin", dir: true },
           ],
         },
       ],
