@@ -28,7 +28,7 @@ Type the folder name followed by `/` in the file name box.
 Put images in your `img/` folder:
 
 ```markdown
-![What the image shows](img/2026-11-16-stage.jpg)
+![Write image caption here](img/2026-11-16-stage.jpg)
 ```
 
 Set the width:
