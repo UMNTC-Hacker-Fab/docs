@@ -32,6 +32,7 @@
         {
           icon: "📝", title: "Updates", path: "updates", dir: true,
           children: [
+            { title: "Example Member", path: "updates/example-member", dir: true },
             { title: "Leonard Jin", path: "updates/leonard-jin", dir: true },
           ],
         },
