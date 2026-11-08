@@ -9,7 +9,7 @@ I'm building the maskless lithography stepper. I'm also leading the gen one fab 
 **Waterjetting top plate**:I met up with Carson from GopherMotorsports who taught me how to waterjet. We waterjetted the top plate of the stepper that holds the projection system. Carson also said in the future motorsports is willing to share their scrap metal and we can also setup a way for us to purchase raw materials from them :D
 
 
-**CAD assembly**: I've been building the complete CAD assembly for the stepper. I met up with Dominic a mechE who helped me with solidworks. I got the NEMA 11 stepper motors from grabcad.com and extrude cutted them in SolidWorks so that they matched the exact length of the motors we purchased. I also pulled the proximity sensors from grabcad and mated both the motors and the sensors to the xyz stage assembly. The inductive proximity sensors are interesting, going to create a short on how they work
+**CAD assembly**: I've been building the complete CAD assembly for the stepper. I met up with Dominic a mechE who helped me with solidworks. I got the NEMA 11 stepper motors from grabcad.com and extrude cutted them in SolidWorks so that they matched the exact length of the motors we purchased. I also pulled the proximity sensors from grabcad and mated both the motors and the sensors to the xyz stage assembly. The inductive proximity sensors are interesting, going to create a short doc on how they work
 
 ![Sensor mount top view.](img/sensor_mount_top_view.png)
 ![Sensor mount side view.](img/sensor_mount_side_view.png)
