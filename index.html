@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nanofab Docs</title>
+  <meta name="description" content="Minnesota Nanofabrication documentation: fabs, machines, and weekly updates.">
+  <link rel="icon" href="assets/img/logo.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&family=Noto+Color+Emoji&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+  <link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <button class="icon-btn menu-btn" id="menu-btn" aria-label="Open navigation">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+      <a class="brand" href="#/home">
+        <img src="assets/img/logo.webp" alt="" width="32" height="32">
+        <span>Minnesota Nanofabrication</span>
+      </a>
+      <div class="topbar-right">
+        <button class="search-trigger" id="search-btn" aria-label="Search">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <span>Search…</span>
+          <kbd>Ctrl K</kbd>
+        </button>
+        <a href="https://github.com/UMNTC-Hacker-Fab/docs" target="_blank" rel="noopener" class="icon-btn" aria-label="GitHub repository">
+          <svg viewBox="0 0 16 16" width="18" height="18" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <div class="shell">
+    <aside class="sidebar" id="sidebar">
+      <nav id="sidebar-nav" aria-label="Documentation"></nav>
+    </aside>
+    <div class="scrim" id="scrim"></div>
+
+    <main class="main">
+      <div class="page">
+        <article class="content">
+          <nav class="crumbs" id="crumbs" aria-label="Breadcrumb"></nav>
+          <div id="doc" class="doc"></div>
+          <nav class="pager" id="pager" aria-label="Pages"></nav>
+          <div class="page-meta" id="page-meta"></div>
+        </article>
+        <aside class="toc" id="toc" aria-label="On this page"></aside>
+      </div>
+    </main>
+  </div>
+
+  <div class="search-modal" id="search-modal" hidden>
+    <div class="search-panel" role="dialog" aria-label="Search">
+      <div class="search-input-row">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input id="search-input" type="search" placeholder="Search the docs…" autocomplete="off" spellcheck="false">
+        <kbd>Esc</kbd>
+      </div>
+      <ul id="search-results" class="search-results"></ul>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script src="assets/js/nav.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
