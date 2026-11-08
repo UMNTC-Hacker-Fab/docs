@@ -23,6 +23,12 @@ Type the folder name followed by `/` in the file name box.
 
 ![Typing a folder name in GitHub's file name box](img/new-folder.png)
 
+## Edit a file
+
+Open the file and click the pencil icon.
+
+![The pencil icon on a file in GitHub](img/edit-file.png)
+
 ## Images
 
 Put images in your `img/` folder:
