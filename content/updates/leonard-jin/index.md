@@ -3,11 +3,10 @@
 I'm building the maskless lithography stepper. I'm also leading the gen one fab to design and assemble the machines by the end of Fall 2026 semester.
 
 ## Weekly Update #1 (11/9/26)
-
-![Waterjetted stepper to plate.](img/stepper_top_plate.png)
-
 - TI Projector arrived
 - DigiKey components arrived
+
+![Waterjetted stepper to plate.](img/stepper_top_plate.png)
 
 **Waterjetting top plate**:I met up with Carson from GopherMotorsports who taught me how to waterjet. We waterjetted the top plate of the stepper that holds the projection system. Carson also said in the future motorsports is willing to share their scrap metal and we can also setup a way for us to purchase raw materials from them :D
 
