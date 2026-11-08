@@ -12,7 +12,7 @@ I'm building the maskless lithography stepper. I'm also leading the gen one fab 
 **CAD assembly**: I've been building the complete CAD assembly for the stepper. I met up with Dominic a mechE who helped me with solidworks. I got the NEMA 11 stepper motors from grabcad.com and extrude cutted them in SolidWorks so that they matched the exact length of the motors we purchased. I also pulled the proximity sensors from grabcad and mated both the motors and the sensors to the xyz stage assembly. The inductive proximity sensors are interesting, going to create a short on how they work
 
 ![Sensor mount top view.](img/sensor_mount_top_view.png)
-![Sensor mount side view.](img/sensor_mount_top_view.png)
+![Sensor mount side view.](img/sensor_mount_side_view.png)
 
 I realized the 3d printed sensor mounts looked fragile and may break or wobble. This design could be intentional given that Sky from CMU said that they had poor tolerance with the xyz stage and told me to reachout to Carson (Calix on discord) to ask him about the design. I reached out and he hasn't responded yet. 
 
