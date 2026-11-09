@@ -5,6 +5,7 @@ I'm building the maskless lithography stepper. I'm also leading the gen one fab 
 ## Weekly Update #1 (11/9/26)
 - TI Projector arrived
 - DigiKey components arrived
+- ThorLabs optical components arrived
 
 ![Waterjetted stepper to plate.](img/stepper_top_plate.png)
 
