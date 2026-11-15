@@ -239,6 +239,10 @@
   if (!location.hash) history.replaceState(null, "", "#/" + HOME);
   route();
 
+  /* ---------- theme toggle (setTheme lives in index.html <head>) ---------- */
+  $("#theme-btn").addEventListener("click", () =>
+    window.setTheme(document.documentElement.dataset.theme === "dark" ? "light" : "dark", true));
+
   /* ---------- mobile nav ---------- */
   $("#menu-btn").addEventListener("click", () => document.body.classList.toggle("nav-open"));
   $("#scrim").addEventListener("click", () => document.body.classList.remove("nav-open"));

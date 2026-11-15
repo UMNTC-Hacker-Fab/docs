@@ -4,7 +4,7 @@
    with rounded highlighted items and page emoji, bold titles, rounded
    cards and hints, "On this page" outline, prev/next cards.
    Palette from the club: UV purple on white, near-black ink, IBM Plex.
-   One mode only (light).
+   Light and dark (colors only; see the dark block after :root).
    ===================================================================== */
 
 :root {
@@ -28,6 +28,11 @@
   --warn: #b45309;   --warn-bg: #fff7ea;
   --danger: #b91c1c; --danger-bg: #fef1f1;
 
+  --topbar-bg: rgba(255, 255, 255, .9);
+  --hover-wash: rgba(0, 0, 0, .05);
+  --card-shadow: rgba(76, 29, 149, .08);
+  --overlay: rgba(17, 17, 20, .35);
+
   --sans: "IBM Plex Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   --mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   --emoji: "Noto Color Emoji", "Apple Color Emoji", "Segoe UI Emoji", sans-serif;
@@ -41,6 +46,39 @@
   --ease: cubic-bezier(.2, .7, .2, 1);
   color-scheme: light;
 }
+
+/* ---------- dark mode: colors only ----------
+   index.html sets data-theme on <html> before paint (saved choice, else
+   the OS setting); the header button flips it. */
+:root[data-theme="dark"] {
+  --uv: #a78bfa;
+  --uv-strong: #c4b5fd;
+  --uv-tint: rgba(167, 139, 250, .13);
+  --uv-tint-2: rgba(167, 139, 250, .22);
+  --uv-line: rgba(167, 139, 250, .4);
+  --ink: #f2f2f4;
+  --text: #d4d5da;
+  --muted: #a3a5ab;
+  --faint: #7c7e85;
+  --bg: #121214;
+  --soft: #1b1b1f;
+  --line: #27272c;
+  --line-2: #36363d;
+  --mark: rgba(167, 139, 250, .35);
+
+  --note: #60a5fa;   --note-bg: rgba(96, 165, 250, .09);
+  --tip: #4ade80;    --tip-bg: rgba(74, 222, 128, .08);
+  --warn: #fbbf24;   --warn-bg: rgba(251, 191, 36, .08);
+  --danger: #f87171; --danger-bg: rgba(248, 113, 113, .09);
+
+  --topbar-bg: rgba(18, 18, 20, .85);
+  --hover-wash: rgba(255, 255, 255, .07);
+  --card-shadow: rgba(0, 0, 0, .45);
+  --overlay: rgba(0, 0, 0, .6);
+  color-scheme: dark;
+}
+/* logo.webp has an opaque white background; clip to the purple wafer */
+:root[data-theme="dark"] .brand img { clip-path: circle(34% at 49% 48%); }
 
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-padding-top: calc(var(--header-h) + 24px); }
@@ -61,7 +99,7 @@ kbd {
 /* ---------- header ---------- */
 .topbar {
   position: sticky; top: 0; z-index: 50; height: var(--header-h);
-  background: rgba(255, 255, 255, .9); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+  background: var(--topbar-bg); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--line);
 }
 .topbar-inner { height: 100%; display: flex; align-items: center; gap: 16px; padding: 0 24px; }
@@ -84,6 +122,9 @@ kbd {
 }
 .icon-btn:hover { color: var(--ink); background: var(--soft); }
 .menu-btn { display: none; margin-left: -8px; }
+.theme-btn .i-sun { display: none; }
+:root[data-theme="dark"] .theme-btn .i-sun { display: block; }
+:root[data-theme="dark"] .theme-btn .i-moon { display: none; }
 
 /* ---------- shell ---------- */
 .shell { display: flex; align-items: flex-start; }
@@ -117,7 +158,7 @@ kbd {
   flex: none; width: 28px; height: 28px; margin-right: 2px; display: flex; align-items: center; justify-content: center;
   background: none; border: 0; border-radius: 6px; color: var(--faint); cursor: pointer;
 }
-.nav-toggle:hover { color: var(--ink); background: rgba(0, 0, 0, .05); }
+.nav-toggle:hover { color: var(--ink); background: var(--hover-wash); }
 .nav-toggle svg { transition: transform .18s var(--ease); }
 .nav-item.open > .nav-row .nav-toggle svg { transform: rotate(90deg); }
 .nav-item:not(.open) > .nav-list { display: none; }
@@ -216,7 +257,7 @@ kbd {
   border: 1px solid var(--line); border-radius: var(--r-lg); background: var(--bg); color: var(--ink); text-decoration: none;
   transition: border-color .15s, box-shadow .15s, transform .15s var(--ease);
 }
-.doc .card:hover { border-color: var(--uv-line); box-shadow: 0 4px 16px rgba(76, 29, 149, .08); transform: translateY(-1px); }
+.doc .card:hover { border-color: var(--uv-line); box-shadow: 0 4px 16px var(--card-shadow); transform: translateY(-1px); }
 .doc .card-icon { font-style: normal; font-family: var(--emoji); font-size: 24px; line-height: 1; margin-bottom: 8px; }
 .doc .card b { font-size: 15.5px; font-weight: 600; letter-spacing: -.01em; }
 .doc .card span { font-size: 14px; line-height: 1.5; color: var(--muted); }
@@ -227,7 +268,7 @@ kbd {
   display: flex; align-items: center; gap: 12px; padding: 14px 18px; border: 1px solid var(--line); border-radius: var(--r-lg);
   color: var(--ink); text-decoration: none; transition: border-color .15s, box-shadow .15s;
 }
-.pager a:hover { border-color: var(--uv-line); box-shadow: 0 4px 16px rgba(76, 29, 149, .08); }
+.pager a:hover { border-color: var(--uv-line); box-shadow: 0 4px 16px var(--card-shadow); }
 .pager a > div { display: flex; flex-direction: column; min-width: 0; flex: 1; }
 .pager .next { grid-column: 2; text-align: right; }
 .pager small { font-size: 13px; color: var(--faint); }
@@ -241,7 +282,7 @@ kbd {
 .page-meta .path { display: none; }
 
 /* ---------- search ---------- */
-.search-modal { position: fixed; inset: 0; z-index: 100; display: flex; justify-content: center; align-items: flex-start; padding: 12vh 16px 16px; background: rgba(17, 17, 20, .35); -webkit-backdrop-filter: blur(2px); backdrop-filter: blur(2px); }
+.search-modal { position: fixed; inset: 0; z-index: 100; display: flex; justify-content: center; align-items: flex-start; padding: 12vh 16px 16px; background: var(--overlay); -webkit-backdrop-filter: blur(2px); backdrop-filter: blur(2px); }
 .search-modal[hidden] { display: none; }
 .search-panel { width: 100%; max-width: 640px; max-height: 70vh; display: flex; flex-direction: column; background: var(--bg); border-radius: var(--r-lg); box-shadow: 0 24px 64px rgba(0, 0, 0, .2), 0 0 0 1px var(--line); overflow: hidden; }
 .search-input-row { display: flex; align-items: center; gap: 12px; padding: 0 16px; border-bottom: 1px solid var(--line); color: var(--faint); }
