@@ -38,10 +38,6 @@ The stepper will be used for patterning: transferring images of the circuit desi
 
 ## Wafer Stage
 
-### Firmware
-
-### Camera Alignment
-
 ## Main Frame
 
 ## Projector
@@ -51,17 +47,17 @@ The stepper will be used for patterning: transferring images of the circuit desi
 ## Optics
 ![Stepper optical assembly](img/stepper_optical_assembly.png)
 
-1. SM1A9
-2. SM1L10 (2×)
-3. SM1V10
-4. SM1CPL10
-5. CM1-DCH/M
-6. BSN10R
-7. SM1L03 (2×)
-8. SM1CPL05
-9. SM1V05
-10. SM1L05
-11. SM1A53
-12. SM1A3
-13. SM1CP2
-14. TR6-P5
+1. [SM1A9](https://www.thorlabs.com/item/SM1A9)
+2. [SM1L10](https://www.thorlabs.com/item/SM1L10) (2×)
+3. [SM1V10](https://www.thorlabs.com/item/SM1V10)
+4. [SM1CPL10](https://www.thorlabs.com/item/SM1CPL10)
+5. [CM1-DCH/M](https://www.thorlabs.com/item/CM1-DCH_M)
+6. [BSN10R](https://www.thorlabs.com/item/BSN10R)
+7. [SM1L03](https://www.thorlabs.com/item/SM1L03) (2×)
+8. [SM1CPL05](https://www.thorlabs.com/item/SM1CPL05)
+9. [SM1V05](https://www.thorlabs.com/item/SM1V05)
+10. [SM1L05](https://www.thorlabs.com/item/SM1L05)
+11. [SM1A53](https://www.thorlabs.com/item/SM1A53)
+12. [SM1A3](https://www.thorlabs.com/item/SM1A3)
+13. [SM1CP2](https://www.thorlabs.com/item/SM1CP2)
+14. [TR6-P5](https://www.thorlabs.com/item/TR6-P5)
