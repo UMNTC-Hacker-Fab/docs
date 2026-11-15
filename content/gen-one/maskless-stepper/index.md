@@ -49,6 +49,7 @@ The stepper will be used for patterning: transferring images of the circuit desi
 ### DLP Setup
 
 ## Optics
+![Stepper optical assembly](img/stepper_optical_assembly.png)
 
 1. SM1A9
 2. SM1L10 (2×)
