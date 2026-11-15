@@ -49,3 +49,18 @@ The stepper will be used for patterning: transferring images of the circuit desi
 ### DLP Setup
 
 ## Optics
+
+1. SM1A9
+2. SM1L10 (2×)
+3. SM1V10
+4. SM1CPL10
+5. CM1-DCH/M
+6. BSN10R
+7. SM1L03 (2×)
+8. SM1CPL05
+9. SM1V05
+10. SM1L05
+11. SM1A53
+12. SM1A3
+13. SM1CP2
+14. TR6-P5
