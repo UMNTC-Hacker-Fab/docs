@@ -2,6 +2,16 @@
 
 I'm building the maskless lithography stepper. I'm also leading the gen one fab to design and assemble the machines by the end of Fall 2026 semester.
 
+## Weekly Update #2 (11/16/26)
+![Finite vs infinite conjugate objective](img/finite_vs_infinite_conjugate_objective.png)
+![Main frame front view](img/main_frame_front_view.png)
+![Main frame side view](img/main_frame_side_view.png)
+![Main frame top view](img/main_frame_top_view.png)
+![Mech XYZ front view](img/mech_xyz_front_view.png)
+![Mech XYZ side view](img/mech_xyz_side_view.png)
+![Project assembly bottom view](img/project_assem_bottom_view.png)
+![Project assembly front view](img/project_assem_front_view.png)
+
 ## Weekly Update #1 (11/9/26)
 - TI Projector arrived
 - DigiKey components arrived
