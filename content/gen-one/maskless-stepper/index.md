@@ -1,6 +1,8 @@
 # Maskless Litho Stepper
 The stepper will be used for patterning: transferring images of circuit designs onto a light-sensitive layer of photoresist. 
 
+![Stepper concept diagram](img/stepper_concept_diagram.png)
+
 **Stepper BOM**
 
 | Item | Qty | Unit Price | Line Total |
