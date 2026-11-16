@@ -3,6 +3,9 @@
 I'm building the maskless lithography stepper. I'm also leading the gen one fab to design and assemble the machines by the end of Fall 2026 semester.
 
 ## Weekly Update #2 (11/16/26)
+![Beamsplitter mirror](img/beamsplitter_mirror.png)
+![Stepper optics](img/stepper_optics.png)
+![Mitutoyo Plan Apo 10x objective](img/mitoyo_apo10_objective.png)
 ![Finite vs infinite conjugate objective](img/finite_vs_infinite_conjugate_objective.png)
 ![Main frame front view](img/main_frame_front_view.png)
 ![Main frame side view](img/main_frame_side_view.png)
