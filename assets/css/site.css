@@ -153,6 +153,7 @@ kbd {
 .nav-icon { flex: none; width: 20px; text-align: center; font-family: var(--emoji); font-size: 15px; line-height: 1; }
 .nav-row:has(.nav-link.active) { background: var(--uv-tint); }
 .nav-link.active { color: var(--uv); font-weight: 600; }
+.nav-alias-mark { margin-left: auto; padding-left: 6px; color: var(--muted, currentColor); opacity: .6; font-size: 12px; }
 .nav-list .nav-list .nav-link { font-size: 14px; padding-top: 5px; padding-bottom: 5px; }
 .nav-toggle {
   flex: none; width: 28px; height: 28px; margin-right: 2px; display: flex; align-items: center; justify-content: center;

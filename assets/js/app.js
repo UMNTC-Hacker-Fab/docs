@@ -18,6 +18,7 @@
     for (const n of nodes) {
       if (n.section) { walk(n.children, [{ title: n.section }], n.section); continue; }
       if (n.group) { walk(n.children, trail.concat({ title: n.group }), section); continue; }
+      if (n.link) continue;   // sidebar alias: the real page is registered where it lives
       const entry = { title: n.title, path: n.path, icon: n.icon, trail, section, dir: !!n.dir || !!(n.children && n.children.length) };
       pages.push(entry); byPath[n.path] = entry;
       if (n.children) walk(n.children, trail.concat({ title: n.title, path: n.path }), section);
@@ -31,6 +32,13 @@
     for (const n of nodes) {
       if (n.group) {
         html += `<li class="nav-group"><div class="nav-group-title">${esc(n.group)}</div>${renderList(n.children)}</li>`;
+        continue;
+      }
+      if (n.link) {
+        const t = byPath[n.link] || {}, icon = n.icon || t.icon;
+        html += `<li class="nav-item nav-alias" data-alias="${esc(n.link)}"><div class="nav-row">` +
+          `<a class="nav-link" href="#/${esc(n.link)}" title="Lives at ${esc(n.link)}">${icon ? `<span class="nav-icon">${icon}</span>` : ""}<span>${esc(n.title || t.title)}</span><span class="nav-alias-mark" aria-hidden="true">↪</span></a>` +
+          `</div></li>`;
         continue;
       }
       const kids = n.children && n.children.length;

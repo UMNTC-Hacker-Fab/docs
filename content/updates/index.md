@@ -5,6 +5,12 @@ Example Member | | #/updates/example-member
 Leonard Jin | | #/updates/leonard-jin
 ```
 
+## Machine blogs
+
+```cards
+Sputterer Blog | | #/gen-one/sputterer/blog
+```
+
 ## Create a file
 
 **Add file → Create new file**, or the **+** next to the branch name.

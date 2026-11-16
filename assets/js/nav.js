@@ -5,7 +5,7 @@
    Every page is a Markdown file under content/. Its route is the file
    path without ".md"; a folder's index.md is the folder's own route.
      content/gen-one/spinner/index.md              ->  #/gen-one/spinner
-     content/gen-one/sputterer/pvd-vacuum.md       ->  #/gen-one/sputterer/pvd-vacuum
+     content/gen-one/sputterer/build/vacuum.md     ->  #/gen-one/sputterer/build/vacuum
 
    Hierarchy:  section (fab)  >  system (machine)  >  subsystem
      section: { section, children[] }
@@ -34,6 +34,7 @@
           children: [
             { title: "Example Member", path: "updates/example-member", dir: true },
             { title: "Leonard Jin", path: "updates/leonard-jin", dir: true },
+            { title: "Sputterer Blog", link: "gen-one/sputterer/blog" },
           ],
         },
       ],
@@ -46,9 +47,28 @@
           ["🧑‍💻", "Alignment Firmware", "alignment-firmware"],
           ["📷", "Computer Vision Software", "computer-vision-software"],
         ]),
-        m("☄️", "DC & RF Magnetron Sputterer", "gen-one/sputterer", [
-          ["💨", "PVD Vacuum", "pvd-vacuum"],
-        ]),
+        {
+          icon: "☄️", title: "DC & RF Magnetron Sputterer", path: "gen-one/sputterer", dir: true,
+          children: [
+            m("🔧", "Build", "gen-one/sputterer/build", [
+              ["💨", "Vacuum System", "vacuum"],
+              ["🧲", "Magnetron & Target", "magnetron"],
+              ["⚡", "DC & RF Power", "power"],
+              ["⚠️", "Safety", "safety"],
+            ]),
+            m("📐", "Theory", "gen-one/sputterer/theory", [
+              ["🌌", "Vacuum Fundamentals", "vacuum"],
+              ["🟣", "Plasma & Glow Discharge", "plasma"],
+              ["💥", "Sputtering Mechanics", "sputtering"],
+              ["🧲", "Magnetron Confinement", "magnetron"],
+              ["🔀", "DC vs RF Sputtering", "dc-vs-rf"],
+              ["🧱", "Thin Film Growth", "film-growth"],
+            ]),
+            m("📰", "Blog", "gen-one/sputterer/blog", [
+              ["📝", "Weekly Update #1 (11/15/26)", "2026-11-15"],
+            ]),
+          ],
+        },
         m("🔥", "Tube Furnace", "gen-one/tube-furnace"),
         m("🌞", "Hot Plate", "gen-one/hot-plate"),
         m("🌀", "Spinner", "gen-one/spinner"),

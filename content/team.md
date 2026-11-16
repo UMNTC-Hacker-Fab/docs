@@ -24,7 +24,7 @@ Chief Engineer: [Leonard Jin](#/updates/leonard-jin)
 | [Alignment Firmware](#/gen-one/maskless-stepper/alignment-firmware) | Misha Mickevicius |
 | [Computer Vision Software](#/gen-one/maskless-stepper/computer-vision-software) | Harshit Mehendiratta |
 | [DC & RF Magnetron Sputterer](#/gen-one/sputterer) | Bear BlinSchauer |
-| [PVD Vacuum](#/gen-one/sputterer/pvd-vacuum) | Brendan |
+| [Vacuum System](#/gen-one/sputterer/build/vacuum) | Brendan |
 | [Tube Furnace](#/gen-one/tube-furnace) | Arjun Senthilvel |
 | [Hot Plate](#/gen-one/hot-plate) | Vikram Narra |
 | [Spinner](#/gen-one/spinner) | Wenteng Li |
