@@ -1,7 +1,7 @@
 # Spinner
 The spinner will be used to coat 10 × 10 mm silicon chips with a thin, uniform layer of photoresist or spin-on dopant at a controlled speed (500–6000 RPM). It is designed in CAD and not yet built or tested.
 
-![Spinner concept diagram](img/spinner_concept_diagram.png)
+![Spinner concept diagram](spinner_concept_diagram.png)
 
 **Spinner BOM**
 
@@ -25,7 +25,7 @@ The chip sits in a 10.3 mm recessed pocket on a printed PLA chuck (Ø40 mm) and 
 The chuck screws onto the rotor of a SunnySky X2216 1250KV brushless motor, driven by a Holybro Tekko32 ESC running open-source AM32 firmware. The ESC reports the actual RPM over a serial telemetry wire, so no separate tachometer is needed. The motor mounting holes (assumed 16 × 19 mm) will be measured when it arrives.
 
 ## Controller
-![Spinner control diagram](img/spinner_control_diagram.jpg)
+![Spinner control diagram](spinner_control_diagram.jpg)
 
 An ESP32-S3 runs a PID speed loop: it sends DShot300 speed commands to the ESC and reads RPM back from the telemetry wire. A recipe runs 300 RPM start, 1500 RPM/s ramp, 5–180 s hold, then a controlled ramp down, the same profile as the [CMU Hacker Fab spin coater](https://docs.hackerfab.org/home/fab-toolkit/spincoater). Recipes are set and RPM is logged from a laptop over USB serial. Opening the lid triggers a slow stop instead of a hard brake.
 
@@ -40,6 +40,6 @@ An ESP32-S3 runs a PID speed loop: it sends DShot300 speed commands to the ESC a
 A printed base (150 × 150 × 45 mm) holds the motor and electronics. Three posts hold a catch bowl (Ø95.5 × 34 mm) around the chuck, with the chip top 8.8 mm below the bowl rim. A clear polycarbonate lid presses the interlock switch when closed. Overall size with lid: 150 × 150 × 102 mm.
 
 ## Electrostatic Chuck (future)
-![Electrostatic chuck concept sketch](img/electrostatic_chuck_sketch.jpg)
+![Electrostatic chuck concept sketch](electrostatic_chuck_sketch.jpg)
 
 An electrostatic chuck is designed and calculated as a later upgrade. It needs lab safety approval for high voltage before any testing.
