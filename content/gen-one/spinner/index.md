@@ -1,83 +1,38 @@
 # Spinner
+The spinner will be used to coat 10 × 10 mm silicon chips with a thin, uniform layer of photoresist or spin-on dopant at a controlled speed (500–6000 RPM).
 
-*Owner: Wenteng Li*
+![Spinner concept diagram](img/spinner_concept_diagram.png)
 
-## Target Specs
+**Spinner BOM**
 
-The goal of this machine is to coat 10 × 10 mm silicon chips with photoresist and spin-on dopant at a repeatable, closed-loop speed, for Gen One's 10 µm NMOS process.
+| Item | Qty | Unit Price | Line Total |
+|---|---:|---:|---:|
+| [SunnySky X2216 1250KV Brushless Motor](https://sunnyskyusa.com/products/sunnysky-x2216-brushless-motors) | 1 | $18.99 | $18.99 |
+| Holybro Tekko32 F4 45A ESC (AM32) | 1 | $23.99 | $23.99 |
+| [Mean Well GST60A12 12 V 5 A Power Supply](https://www.jameco.com/z/GST60A12-P1J-MEAN-WELL-12VDC-5A-60W-3-Wire-Desktop-Power-Adapter-with-2-1mm-Plug_2224382.html) | 1 | $19.40 | $19.40 |
+| Import tariff on power supply (21%) | 1 | $4.07 | $4.07 |
+| Pololu D24V10F5 5 V Regulator | 1 | $13.95 | $13.95 |
+| Omron SS-5GL Lid Interlock Switch | 1 | $2.09 | $2.09 |
+| 2.1 mm DC Jack to Screw Terminal | 1 | $2.00 | $2.00 |
+| **Total Build Price** | | | **$84.49** |
 
-| Spec | Value |
-|---|---|
-| Substrate | 10 × 10 mm Si chips, about 525 µm thick |
-| Speed | 500–6000 RPM closed loop; hardware headroom to about 10000 RPM (not yet tested) |
-| Program | 300 RPM start, 1500 RPM/s ramp, 5–180 s hold, controlled ramp down |
-| Chip holding | 10.3 mm recessed chuck + double-sided Kapton tape |
-| Control | ESP32-S3, speed read from the ESC's serial telemetry |
-| Safety | Clear polycarbonate lid with interlock switch; slow stop instead of hard brake |
-| Size | 150 × 150 × 102 mm with lid |
-| Purchased parts | about $85 |
+Already on hand (no cost): ESP32-S3 dev board, PLA for printed parts (about 350 g, Anderson Labs), Ø93 × 3 mm polycarbonate lid, double-sided Kapton tape, M3 screws and wire. Not included: power switch, shipping, tax. Nothing has been ordered yet; prices checked 11/1/26.
 
-## Where to start for new Members
+## Chuck
+The chip sits in a 10.3 mm recessed pocket on a printed PLA chuck (Ø40 mm) and is held down with double-sided Kapton tape. The pocket takes the sideways force when spinning; the tape keeps the chip from lifting. The pocket size will be chosen by printing a test coupon with 5 pocket sizes.
 
-* Read this page and the [CMU Hacker Fab spin coater docs](https://docs.hackerfab.org/home/fab-toolkit/spincoater), which our design follows.
-* Ask Wenteng Li for the CAD generator, printable STL files and the team BOM sheet.
-* Ask for help if you are unsure.
+## Motor & Drive
+The chuck screws onto the rotor of a SunnySky X2216 1250KV brushless motor, driven by a Holybro Tekko32 ESC running open-source AM32 firmware. The ESC reports the actual RPM over a serial telemetry wire, so no separate tachometer is needed.
 
-## Design
+## Controller
+![Spinner control diagram](img/spinner_control_diagram.jpg)
 
-![Concept diagram: chip on a recessed chuck inside a catch bowl, interlock lid, motor, driver, controller and waste handling](img/concept-diagram.png)
+An ESP32-S3 runs a PID speed loop: it sends DShot300 speed commands to the ESC and reads RPM back from the telemetry wire. A recipe runs 300 RPM start, 1500 RPM/s ramp, 5–180 s hold, then a controlled ramp down (same profile as the [CMU Hacker Fab spin coater](https://docs.hackerfab.org/home/fab-toolkit/spincoater)). Recipes are set and RPM is logged from a laptop over USB serial. Opening the lid triggers a slow stop instead of a hard brake.
 
-The chip sits in a recessed chuck inside a catch bowl, under an interlocked lid, and waste resist drains to a separate handling module.
+## Enclosure & Catch Bowl
+A printed base (150 × 150 × 45 mm) holds the motor and electronics. Three posts hold a catch bowl around the chuck, with the chip top 8.8 mm below the bowl rim, and a clear polycarbonate lid presses the interlock switch when closed. Overall size with lid: 150 × 150 × 102 mm.
 
-The ESP32 sends a speed command to the ESC and reads the actual RPM back from the ESC's telemetry wire, so no separate tachometer is needed. Opening the lid triggers a slow ramp-down.
+## Electrostatic Chuck (future)
+![Electrostatic chuck concept sketch](img/electrostatic_chuck_sketch.jpg)
 
-<img src="img/system-diagram.jpg" width="700" alt="System diagram: power supply, ESC, motor, ESP32 control loop, lid interlock">
-
-Mechanically, the motor sits in a printed base, three posts hold a catch bowl around the chuck, and the chip top sits 8.8 mm below the bowl rim.
-### Changes from the CMU Hacker Fab design
-
-| | CMU Hacker Fab V1 | UMN Spinner V1 |
-|---|---|---|
-| Controller | Raspberry Pi Pico | ESP32-S3 |
-| Speed feedback | Bidirectional DShot telemetry | Separate ESC telemetry wire over UART |
-| ESC | BLHeli_32, closed firmware | Tekko32 with open AM32 firmware |
-| Chip holding | Tape on a flat chuck | Recessed 10.3 mm pocket + tape |
-| User interface | 16 × 2 LCD + buttons | Laptop USB serial |
-| Purchased cost | about $110 | about $85 |
-
-## BOM
-
-Nothing ordered yet. Prices checked 11/1/26.
-
-| Part | Selection | Cost (USD) | Source |
-|---|---|---|---|
-| Brushless motor | [SunnySky X2216 1250KV](https://sunnyskyusa.com/products/sunnysky-x2216-brushless-motors) | 18.99 | To buy |
-| ESC | Holybro Tekko32 F4 45A (AM32) | 23.99 | To buy |
-| Power supply | [Mean Well GST60A12, 12 V 5 A](https://www.jameco.com/z/GST60A12-P1J-MEAN-WELL-12VDC-5A-60W-3-Wire-Desktop-Power-Adapter-with-2-1mm-Plug_2224382.html) | 19.40 + 21% tariff | To buy |
-| 5 V regulator | Pololu D24V10F5 | 13.95 | To buy |
-| Lid interlock switch | Omron SS-5GL | 2.09 | To buy |
-| DC jack | 2.1 mm to screw terminal | 2.00 | To buy |
-| Controller | ESP32-S3 dev board | 0 | Owned |
-| Printed parts | PLA, about 350 g | 0 | Anderson Labs |
-| Clear lid | Polycarbonate disc, Ø93 × 3 mm | 0 | Lab stock |
-| Chip tape | Double-sided Kapton, 1 in | 0 | Lab stock |
-
-**Total to buy: about $85** (excludes power switch, shipping, tax).
-
-## Status
-
-The design is complete in CAD; no V1 hardware has been built or tested yet.
-
-1. Print the pocket test coupon and choose the pocket size.
-2. Buy the motor and ESC, then bench-test closed-loop speed control.
-3. Measure the motor and finalize the mounts.
-4. Coat test chips with PVA, then AZ P4210 at 4000 RPM, then spin-on dopant.
-5. Future upgrade: electrostatic chuck (needs lab safety approval before testing).
-
-<img src="img/electrostatic-concept-sketch.jpg" width="500" alt="Hand-drawn concept of the electrostatic chuck upgrade">
-
-## References
-
-* [CMU Hacker Fab spin coater](https://docs.hackerfab.org/home/fab-toolkit/spincoater)
-* [Maasi open-source spin coater](https://pmc.ncbi.nlm.nih.gov/articles/PMC9118532)
-* [Jeroen's DIY spin coater](https://hackaday.io/project/192036-diy-spin-coater)
+An electrostatic chuck is designed and calculated as a later upgrade. It needs lab safety approval for high voltage before any testing.
