@@ -2,9 +2,7 @@
 
 R&D is home to incubator projects and long-term research.
 
-## Projects
+## Planned Projects
 
-```cards
-Probe Station | | #/rnd/probe-station
-Defect Inspection | | #/rnd/cv-defect-inspection
-```
+- 📍 Probe Station
+- 🫆 Defect Inspection

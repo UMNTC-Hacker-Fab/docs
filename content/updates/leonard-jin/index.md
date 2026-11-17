@@ -2,11 +2,6 @@
 
 I'm building the maskless lithography stepper. I'm also leading the gen one fab to design and assemble the machines by the end of Fall 2026 semester.
 
-## Weekly Update #3 (11/23/26)
-
-### Stepper timeline
-The stepper's plan for the next week, phase by phase, is on the [Maskless Litho Stepper page](#/gen-one/maskless-stepper#timeline): CAD design (Nov 17), 3D printing (Nov 18–20), and part assembly and testing (Nov 23–24).
-
 ## Weekly Update #2 (11/16/26)
 ![Beamsplitter mirror](img/beamsplitter_mirror.png)
 ![Stepper optics](img/stepper_optics.png)

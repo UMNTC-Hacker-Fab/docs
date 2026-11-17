@@ -170,14 +170,17 @@
     body.forEach((r, ri) => {
       const gr = `grid-row:${ri + 2}`;
       if (r.group !== undefined) { html += `<div class="tl-group" style="${gr};grid-column:1 / -1"><span>${esc(r.group)}</span></div>`; return; }
+      // hairline between two machines in the same category
+      if (ri > 0 && body[ri - 1].group === undefined) html += `<div class="tl-sep" style="${gr};grid-column:1 / -1" aria-hidden="true"></div>`;
       if (r.name) html += `<div class="tl-label" style="${gr};grid-column:1">` +
         (r.route ? `<a href="#/${esc(r.route)}">${esc(r.name)}</a>` : `<span>${esc(r.name)}</span>`) + `</div>`;
       const tag = r.route ? "a" : "div", href = r.route ? ` href="#/${esc(r.route)}"` : "";   // cells link to the machine's page
+      const phased = r.cells.some((cell) => cell.length > 1);
       for (let c = 0; c < n; c++) {
-        const blocks = (r.cells[c] || []).filter((b) => TL_STATUS[b.status]);   // "-": empty
+        const blocks = (r.cells[c] || []).filter((b) => TL_STATUS[b.status] && b.text);   // "-" or no text: nothing drawn, so there is no empty box to click
         if (!blocks.length) continue;
         const pos = `${gr};grid-column:${col[c]}`;
-        if (blocks.length === 1 && (r.cells[c] || []).length === 1) {
+        if (blocks.length === 1 && !phased) {   // rows that use phases anywhere draw every block as a phase
           const parts = blocks[0].text ? blocks[0].text.split(/\s+\/\s+/) : [];
           const lines = parts.length > 2 ? [parts[0], parts.slice(1).join(" / ")] : parts;
           html += `<${tag} class="tl-cell s-${blocks[0].status}"${href} style="${pos}" title="${TL_STATUS[blocks[0].status]}">` +
@@ -193,7 +196,7 @@
     });
 
     const legend = Object.entries(TL_STATUS).map(([k, v]) => `<span><i class="s-${k}"></i>${v}</span>`).join("");
-    const showLegend = body.some((r) => r.cells && r.cells.flat().some((c) => c.status === "done" || c.status === "active"));   // an all-planned outline needs no legend
+    const showLegend = false;   // no Done / In progress / Planned legend
     const tracks = `repeat(${n}, minmax(var(--tl-col), 1fr))`;
     return `<div class="tl${bare ? " tl-bare" : ""}">${showLegend ? `<div class="tl-legend">${legend}</div>` : ""}<div class="tl-scroll">` +
       `<div class="tl-grid" style="grid-template-columns:${noLabels ? "calc(var(--tl-lw) / 2)" : "var(--tl-label)"} ${tracks}">${html}</div></div></div>`;

@@ -1,16 +1,14 @@
-# Fab timeline
-
-The big milestones on the way to our first integrated circuit: each process, the machines that have to be done for it, and the date. Below them is one row per machine. Detailed plans live on each machine's page and in weekly updates.
+# Fab Timeline
 
 ```timeline
 @ 2026-11-23 | Funding
-@ 2026-11-30 | Patterning | Maskless litho stepper
-@ 2026-12-12 | Doping | Tube furnace / Spin coater / Hot plate
+@ 2026-11-30 | Patterning | Maskless Litho Stepper
+@ 2026-12-12 | Doping | Tube Furnace / Spin Coater / Hot Plate
 @ 2027-03-12 | Sputtering + Etching | DC & RF Magnetron Sputterer / ICP-RIE
-@ 2027-03-26 | First IC out
+@ 2027-03-26 | First IC Out
 
 # Patterning
-## Maskless litho stepper | gen-one/maskless-stepper#timeline
+## Maskless Litho Stepper | gen-one/maskless-stepper#timeline
 active  | CAD design / Nov 17
 + planned | 3D printing / Nov 18–20
 + planned | Assembly + test / Nov 23–24
@@ -19,33 +17,41 @@ planned |
 planned |
 
 # Doping
-## Tube furnace | gen-one/tube-furnace
-planned |
-planned |
-planned |
-planned |
-
-## Spin coater | gen-one/spinner
-planned |
-planned |
+## Tube Furnace | gen-one/tube-furnace#timeline
+planned | Ordering / Nov 23–30
+planned | Build / Dec 7–10
++ planned | Safety test / Dec 12
 planned |
 planned |
 
-## Hot plate | gen-one/hot-plate
+## Spin Coater | gen-one/spinner#timeline
+active  | V1 build / Nov 17–24
++ planned | Coat tests / Nov 25–30
+planned | 10k RPM test / Dec 1–4
++ planned | V2 specs / Dec 5–12
+planned | V2 design / Jan 20–26
++ planned | E-chuck tests / Feb 16–23
++ planned | V2 coat tests / Mar 6
 planned |
+
+## Hot Plate | gen-one/hot-plate
+planned | No timeline yet
 planned |
 planned |
 planned |
 
 # Sputtering + Etching
-## DC & RF Magnetron Sputterer | gen-one/sputterer
+## DC & RF Magnetron Sputterer | gen-one/sputterer#timeline
 planned |
-planned |
-planned |
+active  | Purchasing / Nov 16–Dec 11
+planned | Parts delivery / Dec 14–25
++ planned | Prep / Dec 28–Jan 8
++ planned | Build / Jan 11–Feb 12
++ planned | Testing / Feb 15–Mar 5
 planned |
 
-## ICP-RIE | gen-two/icp-rie
-planned |
+## ICP-RIE
+planned | No timeline yet
 planned |
 planned |
 planned |

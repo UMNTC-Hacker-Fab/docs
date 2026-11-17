@@ -5,7 +5,7 @@
    Every page is a Markdown file under content/. Its route is the file
    path without ".md"; a folder's index.md is the folder's own route.
      content/gen-one/spinner/index.md              ->  #/gen-one/spinner
-     content/gen-one/sputterer/build/vacuum.md     ->  #/gen-one/sputterer/build/vacuum
+     content/gen-one/sputterer/build/safety.md     ->  #/gen-one/sputterer/build/safety
 
    Hierarchy:  section (fab)  >  system (machine)  >  subsystem
      section: { section, children[] }
@@ -25,11 +25,11 @@
 
   window.NAV = [
     {
-      section: "Start here",
+      section: "Start Here",
       children: [
         { icon: "🏠", title: "Home", path: "home" },
         { icon: "👥", title: "Team", path: "team" },
-        { icon: "🗓️", title: "Fab timeline", path: "timeline" },
+        { icon: "🗓️", title: "Fab Timeline", path: "timeline" },
         {
           icon: "📝", title: "Updates", path: "updates", dir: true,
           children: [
@@ -37,7 +37,7 @@
             { title: "Leonard Jin", path: "updates/leonard-jin", dir: true },
             { title: "Arjun Senthilvel", path: "updates/arjun-senthilvel", dir: true },
             { title: "Wenteng Li", path: "updates/wenteng-li", dir: true },
-            { title: "Sputterer Blog", link: "gen-one/sputterer/blog" },
+            { title: "Bear BlinSchauer", path: "updates/bear-blinschauer", dir: true },
           ],
         },
       ],
@@ -45,59 +45,34 @@
     {
       section: "Gen One Fab",
       children: [
-        { icon: "🔌", title: "Gen One overview", path: "gen-one", dir: true },
-        m("📽️", "Maskless Litho Stepper", "gen-one/maskless-stepper", [
-          ["🧑‍💻", "Alignment Firmware", "alignment-firmware"],
-          ["📷", "Computer Vision Software", "computer-vision-software"],
-        ]),
+        { icon: "🔌", title: "Gen One Overview", path: "gen-one", dir: true },
+        m("📽️", "Maskless Litho Stepper", "gen-one/maskless-stepper"),
         {
           icon: "☄️", title: "DC & RF Magnetron Sputterer", path: "gen-one/sputterer", dir: true,
           children: [
             m("🔧", "Build", "gen-one/sputterer/build", [
-              ["💨", "Vacuum System", "vacuum"],
               ["🧲", "Magnetron & Target", "magnetron"],
               ["⚡", "DC & RF Power", "power"],
               ["⚠️", "Safety", "safety"],
             ]),
-            m("📐", "Theory", "gen-one/sputterer/theory", [
-              ["🌌", "Vacuum Fundamentals", "vacuum"],
-              ["🟣", "Plasma & Glow Discharge", "plasma"],
-              ["💥", "Sputtering Mechanics", "sputtering"],
-              ["🧲", "Magnetron Confinement", "magnetron"],
-              ["🔀", "DC vs RF Sputtering", "dc-vs-rf"],
-              ["🧱", "Thin Film Growth", "film-growth"],
-            ]),
-            m("📰", "Blog", "gen-one/sputterer/blog", [
-              ["📝", "Weekly Update #1 (11/15/26)", "2026-11-15"],
-            ]),
+            m("📐", "Theory", "gen-one/sputterer/theory"),
           ],
         },
         m("🔥", "Tube Furnace", "gen-one/tube-furnace"),
         m("🌞", "Hot Plate", "gen-one/hot-plate"),
         m("🌀", "Spinner", "gen-one/spinner"),
-        m("⚡", "Spin-On Doping", "gen-one/spin-on-doping"),
       ],
     },
     {
       section: "Gen Two Fab",
       children: [
-        { icon: "📈", title: "Gen Two overview", path: "gen-two", dir: true },
-        m("🪏", "ICP Reactive Ion Etcher", "gen-two/icp-rie"),
-        m("🔊", "Ultrasonic Cleaner", "gen-two/ultrasonic-cleaner"),
-        m("🔬", "Electron Microscope", "gen-two/electron-microscope"),
-        m("🦾", "Wafer Robotic Arm", "gen-two/wafer-arm"),
-        m("🏝️", "Microenvironment Clean Room", "gen-two/cleanroom-microenvironment"),
-        m("⚗️", "Dopant Synthesis", "gen-two/dopant-synthesis"),
-        m("🧪", "Polymer Synthesis", "gen-two/polymer-synthesis"),
-        m("🖋️", "Inkjet Microplotter", "gen-two/microplotter"),
+        { icon: "📈", title: "Gen Two Overview", path: "gen-two", dir: true },
       ],
     },
     {
       section: "R&D Fab",
       children: [
-        { icon: "🔭", title: "R&D overview", path: "rnd", dir: true },
-        m("📍", "Probe Station", "rnd/probe-station"),
-        m("🫆", "Defect Inspection", "rnd/cv-defect-inspection"),
+        { icon: "🔭", title: "R&D Overview", path: "rnd", dir: true },
       ],
     },
   ];

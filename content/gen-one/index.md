@@ -10,5 +10,4 @@ DC & RF Magnetron Sputterer | | #/gen-one/sputterer
 Tube Furnace | | #/gen-one/tube-furnace
 Hot Plate | | #/gen-one/hot-plate
 Spinner | | #/gen-one/spinner
-Spin-On Doping | | #/gen-one/spin-on-doping
 ```

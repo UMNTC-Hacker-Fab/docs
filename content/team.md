@@ -21,11 +21,11 @@ Chief Engineer: [Leonard Jin](#/updates/leonard-jin)
 | Project | Owner |
 |---|---|
 | [Maskless Lithography Stepper](#/gen-one/maskless-stepper) | [Leonard Jin](#/updates/leonard-jin) |
-| [DC & RF Magnetron Sputterer](#/gen-one/sputterer) | Bear BlinSchauer |
-| [Vacuum System](#/gen-one/sputterer/build/vacuum) | Brendan |
-| [Tube Furnace](#/gen-one/tube-furnace) | Arjun Senthilvel |
+| [DC & RF Magnetron Sputterer](#/gen-one/sputterer) | [Bear BlinSchauer](#/updates/bear-blinschauer) |
+| Vacuum System | Brendan |
+| [Tube Furnace](#/gen-one/tube-furnace) | [Arjun Senthilvel](#/updates/arjun-senthilvel) |
 | [Hot Plate](#/gen-one/hot-plate) | Vikram Narra |
-| [Spinner](#/gen-one/spinner) | Wenteng Li |
+| [Spinner](#/gen-one/spinner) | [Wenteng Li](#/updates/wenteng-li) |
 
 ## Gen Two Fab
 
@@ -33,20 +33,20 @@ Chief Engineer: Andrew Choi
 
 | Project | Owner |
 |---|---|
-| [ICP Reactive Ion Etcher](#/gen-two/icp-rie) | Davit Sandoyan |
-| [Ultrasonic Cleaner](#/gen-two/ultrasonic-cleaner) | Hadi Ahmad |
-| [Electron Microscope](#/gen-two/electron-microscope) | Isaac Holmdahl |
-| [Wafer Robotic Arm](#/gen-two/wafer-arm) | Misha Mickevicius |
-| [Microenvironment Clean Room](#/gen-two/cleanroom-microenvironment) | Alvin |
-| [Dopant Synthesis](#/gen-two/dopant-synthesis) | Matt Reed (Chief Chemical Engineer, Gas Safety Lead) |
-| [Polymer Synthesis](#/gen-two/polymer-synthesis) | Shreyans Tibrawalla (Wet Chemical Safety Lead) |
-| [Inkjet Microplotter](#/gen-two/microplotter) | Andrew Choi |
+| ICP Reactive Ion Etcher | Davit Sandoyan |
+| Ultrasonic Cleaner | Hadi Ahmad |
+| Electron Microscope | Isaac Holmdahl |
+| Wafer Robotic Arm | Misha Mickevicius |
+| Microenvironment Clean Room | Alvin |
+| Dopant Synthesis | Matt Reed (Chief Chemical Engineer, Gas Safety Lead) |
+| Polymer Synthesis | Shreyans Tibrawalla (Wet Chemical Safety Lead) |
+| Inkjet Microplotter | Andrew Choi |
 
 ## R&D Fab
 
-Lead: Bear BlinSchauer
+Lead: [Bear BlinSchauer](#/updates/bear-blinschauer)
 
 | Project | Owner |
 |---|---|
-| [Probe Station](#/rnd/probe-station) | Avi |
-| [Defect Inspection](#/rnd/cv-defect-inspection) | Ayaan Bhola |
+| Probe Station | Avi |
+| Defect Inspection | Ayaan Bhola |

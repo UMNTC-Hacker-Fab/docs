@@ -5,7 +5,6 @@
 
 * The sputtering system will deal with high, ionizing voltage.  
   * Power supplies must be grounded shielding, no touchable contacts.  
-  *   
 * The sputtering system will deal with argon and oxygen gas. (Gas control & storage needs input from MNC and advisor)  
   * Secure Gas cylinders properly  
   * Pressure relief valves, prevent over-pressurization  
