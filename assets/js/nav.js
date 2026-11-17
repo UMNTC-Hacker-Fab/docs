@@ -38,6 +38,7 @@
             { title: "Arjun Senthilvel", path: "updates/arjun-senthilvel", dir: true },
             { title: "Wenteng Li", path: "updates/wenteng-li", dir: true },
             { title: "Bear BlinSchauer", path: "updates/bear-blinschauer", dir: true },
+            { title: "Andrew Choi", path: "updates/andrew-choi", dir: true },
             { title: "Natalie Sinn", path: "updates/natalie-sinn", dir: true },
           ],
         },
