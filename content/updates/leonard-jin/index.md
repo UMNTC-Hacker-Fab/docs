@@ -1,6 +1,7 @@
 # Leonard Jin
 
 I'm building the maskless lithography stepper. I'm also leading the gen one fab to design and assemble the machines by the end of Fall 2026 semester.
+## Weekly Update #3 (11/23/26)
 
 ## Weekly Update #2 (11/16/26)
 ![Beamsplitter mirror](img/beamsplitter_mirror.png)
