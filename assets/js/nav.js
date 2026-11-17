@@ -96,9 +96,8 @@
       section: "R&D Fab",
       children: [
         { icon: "🔭", title: "R&D overview", path: "rnd", dir: true },
-        m("⚖️", "Laser Interferometry", "rnd/laser-interferometry"),
         m("📍", "Probe Station", "rnd/probe-station"),
-        m("🫆", "CV Defect Inspection", "rnd/cv-defect-inspection"),
+        m("🫆", "Defect Inspection", "rnd/cv-defect-inspection"),
       ],
     },
   ];

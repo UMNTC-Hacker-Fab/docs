@@ -1,1 +1,1 @@
-# CV Defect Inspection
+# Defect Inspection

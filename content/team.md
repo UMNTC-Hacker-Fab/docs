@@ -21,8 +21,6 @@ Chief Engineer: [Leonard Jin](#/updates/leonard-jin)
 | Project | Owner |
 |---|---|
 | [Maskless Lithography Stepper](#/gen-one/maskless-stepper) | [Leonard Jin](#/updates/leonard-jin) |
-| [Alignment Firmware](#/gen-one/maskless-stepper/alignment-firmware) | Misha Mickevicius |
-| [Computer Vision Software](#/gen-one/maskless-stepper/computer-vision-software) | Harshit Mehendiratta |
 | [DC & RF Magnetron Sputterer](#/gen-one/sputterer) | Bear BlinSchauer |
 | [Vacuum System](#/gen-one/sputterer/build/vacuum) | Brendan |
 | [Tube Furnace](#/gen-one/tube-furnace) | Arjun Senthilvel |
@@ -38,7 +36,7 @@ Chief Engineer: Andrew Choi
 | [ICP Reactive Ion Etcher](#/gen-two/icp-rie) | Davit Sandoyan |
 | [Ultrasonic Cleaner](#/gen-two/ultrasonic-cleaner) | Hadi Ahmad |
 | [Electron Microscope](#/gen-two/electron-microscope) | Isaac Holmdahl |
-| [Wafer Robotic Arm](#/gen-two/wafer-arm) | Arnav Basnet |
+| [Wafer Robotic Arm](#/gen-two/wafer-arm) | Misha Mickevicius |
 | [Microenvironment Clean Room](#/gen-two/cleanroom-microenvironment) | Alvin |
 | [Dopant Synthesis](#/gen-two/dopant-synthesis) | Matt Reed (Chief Chemical Engineer, Gas Safety Lead) |
 | [Polymer Synthesis](#/gen-two/polymer-synthesis) | Shreyans Tibrawalla (Wet Chemical Safety Lead) |
@@ -50,6 +48,5 @@ Lead: Bear BlinSchauer
 
 | Project | Owner |
 |---|---|
-| [Laser Interferometry](#/rnd/laser-interferometry) | Henry Goldberg |
 | [Probe Station](#/rnd/probe-station) | Avi |
-| [CV Defect Inspection](#/rnd/cv-defect-inspection) | Ayaan Bhola |
+| [Defect Inspection](#/rnd/cv-defect-inspection) | Ayaan Bhola |
