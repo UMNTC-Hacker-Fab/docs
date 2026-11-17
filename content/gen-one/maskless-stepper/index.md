@@ -1,7 +1,49 @@
 # Maskless Litho Stepper
-The stepper will be used for patterning: transferring images of circuit designs onto a light-sensitive layer of photoresist. 
+The stepper will be used for patterning: transferring images of circuit designs onto a light-sensitive layer of photoresist. The current stepper setup has an optical theoretical resolution limit of .863um (wavelength = 410nm and NA = .28) defined by Rayleigh's criterion for lithography.
 
 ![Stepper concept diagram](img/stepper_concept_diagram.png)
+
+## Timeline
+
+Goal: Pattern test lines on S1813 by end of November
+
+| Phase | Dates
+|---|---|
+| CAD design | Tue Nov 17 
+| 3D printing | Wed Nov 18 – Fri Nov 20
+| Part assembly and testing | Mon Nov 23 – Tue Nov 24
+| Buffer | Wed Nov 25 – Mon Nov 30 |
+
+### Current Progress
+- All BOM components arrived
+- CAD assembly in Solidworks
+- Tube lens, camera, and objective physical assembly
+- Basler Pylon camera software installed
+- Soldered inductive sensor, stepper motor, voltage-clamp diodes to the perf board
+
+### CAD Design - Nov 17
+- **LED PCB.** Resolve the heatsink issue for the 410 nm LED PCB order from JLCPCB and succesfully put down the order. The PCB will arrive in 2–3 business days 
+- **Design 3D printed parts**
+  1. Main frame design: Design the base the XYZ stage slots into, supports for the pillars, three legs that each stand on a tennis ball for vibration damping. Purchase 3 tennis balls on Amazon
+  2. Wafer mount: adjust the height of the mount for the 10x Mitutoyo infinite-conjugate objective (the Hacker Fab design used a 10x Edmund Optics objective). The printed part has to put the wafer close enough to the objective's working distance (34mm) so that the stage's Z travel can bring it into focus
+  3. Sensor mounts: make the sensor mount arm thicker because the old ones were fragile and tended to bend under the weight of the sensor
+  4. Set the print settings and start printing the parts
+
+### 3D Printing - Nov 18–20
+- **3D printing:** continue to print the parts designed on Nov 17 in addition to the DLP controller support frame (available on Hacker Fab docs)
+- **Projector assembly** (begin when PCB arrives)
+  1. Test the projector as shipped and set the LED drive level to 150 in the LightCrafter GUI, so the new LEDs aren't overdriven
+  2. Take apart the main casing
+  3. Mount the DLP controller board on the printed support frame
+  4. Fit the 410 nm LED PCB, with the LED housing and heatsink
+
+### Part Assembly and Testing - Nov 23-24
+- Part assembly: projector, lens tube + camera, xyz stage, and main frame
+- Calibrate the XYZ stage and make sure homing repeats and moves match the commanded distance
+- Focus the camera on a chip
+- Install the [stepper GUI](https://github.com/hacker-fab/stepper) and connect it to the camera, stage and projector
+- Testing: Pattern test lines on silicon wafers cleaved into squares from Prof. Jueng-Hyun Cho. The wafers will be coated with S1813 positive phtoresist using the Chemat Technology KW-4A spin coater. We will use in the Corning PC-420fD for dehydration and soft baking. The stepper will expose the test patterns and we will develop with acetone, water, and dry with N2 vapor gun
+
 
 **Stepper BOM**
 
@@ -37,14 +79,6 @@ The stepper will be used for patterning: transferring images of circuit designs 
 | [ThorLabs SM1CP2](https://www.thorlabs.com/item/SM1CP2) | 1 | $22.13 | $22.13 |
 | [ThorLabs TR6-P5](https://www.thorlabs.com/item/TR6-P5) | 1 | $38.92 | $38.92 |
 | **Total Build Price** | | | **$2,953.12** |
-
-## Wafer Stage
-
-## Main Frame
-
-## Projector
-
-### DLP Setup
 
 ## Optics
 ![Stepper optical assembly](img/stepper_optical_assembly.png)

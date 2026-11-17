@@ -87,11 +87,138 @@
       });
       return `<div class="cards">${cards.join("")}</div>`;
     }
+    if (lang === "timeline") return renderTimeline(code);
+    if (lang === "mermaid") return `<div class="mermaid-wrap"><div class="mermaid" data-src="${esc(code)}">${esc(code)}</div></div>`;
     let body = esc(code);
     if (window.hljs && lang && hljs.getLanguage(lang)) body = hljs.highlight(code, { language: lang }).value;
     return `<pre><code class="hljs${lang ? " language-" + esc(lang) : ""}">${body}</code></pre>`;
   };
   marked.use({ renderer, gfm: true });
+
+  /* ---------- milestone timeline (```timeline blocks) ----------
+     Columns are the gaps between milestones, all the same width.
+       @ 2026-11-23 | Funding | optional goal     milestone (a vertical line)
+       # Group                                    group header row
+       ## Row name | route                        row; label links to #/route
+       done | line one / line two                 one cell per interval, in order
+       + done | Phase / dates                     another block in the same interval: blocks stack as phases
+     Cell status: done | active | planned | - (empty). See content/timeline.md. */
+  const MON = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  const TL_STATUS = { done: "Done", active: "In progress", planned: "Planned" };
+  const DAY = 864e5;
+  function renderTimeline(src) {
+    const ms = [], body = [];
+    let row = null;
+    for (const raw of src.split("\n")) {
+      const l = raw.trim();
+      if (!l) continue;
+      if (l[0] === "@") {
+        const [d, label, goal] = l.slice(1).split("|").map((s) => s.trim());
+        const m = /^(\d{4})-(\d{1,2})-(\d{1,2})$/.exec(d);
+        if (m) ms.push({ date: new Date(+m[1], m[2] - 1, +m[3]), label: label || "", goal: goal || "" });
+      } else if (l.startsWith("##")) {
+        const [name, route] = l.slice(2).split("|").map((s) => s.trim());
+        body.push((row = { name, route: (route || "").replace(/^#?\/?/, ""), cells: [] }));
+      } else if (l[0] === "#") {
+        body.push({ group: l.slice(1).trim() });
+        row = null;
+      } else if (row) {
+        const more = l[0] === "+" && row.cells.length;    // "+" adds a block to the previous interval
+        const s = more ? l.slice(1).trim() : l, i = s.indexOf("|");
+        const block = { status: (i < 0 ? s : s.slice(0, i)).trim().toLowerCase(), text: i < 0 ? "" : s.slice(i + 1).trim() };
+        if (more) row.cells[row.cells.length - 1].push(block); else row.cells.push([block]);
+      }
+    }
+    if (ms.length < 2) return `<pre><code>timeline: needs at least two "@ YYYY-MM-DD | label" lines</code></pre>`;
+    ms.sort((a, b) => a.date - b.date);
+    // machines: " / " separates several, one per line; pad every header to the same count so dates stay level
+    ms.forEach((m) => { m.machines = m.goal ? m.goal.split(/\s+\/\s+/) : []; });
+    const rows = Math.max(1, ...ms.map((m) => m.machines.length));
+
+    const bare = !body.length;                           // milestones only: draw a track row instead of machine rows
+    const noLabels = body.every((r) => r.group !== undefined || !r.name);   // no row names: drop the label column
+    const n = ms.length - 1, end = (bare ? 1 : body.length) + 2;      // grid rows: 1 = header, 2.. = body
+    const col = Array.from({ length: n + 1 }, (_, c) => c + 2);   // col[c] = grid column of interval c; col[n] = one past the end
+    const at = (i) => (i < n ? `grid-column:${col[i]}` : `grid-column:${col[n] - 1}`);
+    const today = new Date(); today.setHours(0, 0, 0, 0);
+    const first = ms[0].date, last = ms[n].date;
+    let html = "", prevYear = null;
+
+    ms.forEach((m, i) => {
+      const y = m.date.getFullYear();
+      const date = `${MON[m.date.getMonth()]} ${m.date.getDate()}${y !== prevYear ? ", " + y : ""}`;
+      prevYear = y;
+      const iso = `${y}-${String(m.date.getMonth() + 1).padStart(2, "0")}-${String(m.date.getDate()).padStart(2, "0")}`;
+      const cls = (i === 0 ? " is-first" : "") + (i === n ? " is-end" : "");
+      // header, top to bottom: process ("Patterning"), machines, date
+      html += `<div class="tl-ms${cls}" style="grid-row:1;${at(i)}">` +
+        (m.label ? `<b>${esc(m.label)}</b>` : "") +
+        Array.from({ length: rows }, (_, k) => `<span>${m.machines[k] ? esc(m.machines[k]) : "&nbsp;"}</span>`).join("") +
+        `<time datetime="${iso}">${esc(date)}</time></div>`;
+      html += `<div class="tl-line${cls}" style="grid-row:1 / ${end};${at(i)}" aria-hidden="true"></div>`;
+    });
+
+    if (today >= first && today <= last) {
+      let k = ms.findIndex((m, i) => i < n && today < ms[i + 1].date);
+      if (k < 0) k = n - 1;
+      const f = (today - ms[k].date) / (ms[k + 1].date - ms[k].date);
+      html += `<div class="tl-today" style="grid-row:2 / ${end};grid-column:${col[k]} / ${col[k + 1]};left:${(f * 100).toFixed(3)}%"><span>Today</span></div>`;
+    }
+
+    if (bare) html += `<div class="tl-track" style="grid-row:2;grid-column:2 / ${col[n]}" aria-hidden="true"></div>`;
+
+    body.forEach((r, ri) => {
+      const gr = `grid-row:${ri + 2}`;
+      if (r.group !== undefined) { html += `<div class="tl-group" style="${gr};grid-column:1 / -1"><span>${esc(r.group)}</span></div>`; return; }
+      if (r.name) html += `<div class="tl-label" style="${gr};grid-column:1">` +
+        (r.route ? `<a href="#/${esc(r.route)}">${esc(r.name)}</a>` : `<span>${esc(r.name)}</span>`) + `</div>`;
+      const tag = r.route ? "a" : "div", href = r.route ? ` href="#/${esc(r.route)}"` : "";   // cells link to the machine's page
+      for (let c = 0; c < n; c++) {
+        const blocks = (r.cells[c] || []).filter((b) => TL_STATUS[b.status]);   // "-": empty
+        if (!blocks.length) continue;
+        const pos = `${gr};grid-column:${col[c]}`;
+        if (blocks.length === 1 && (r.cells[c] || []).length === 1) {
+          const parts = blocks[0].text ? blocks[0].text.split(/\s+\/\s+/) : [];
+          const lines = parts.length > 2 ? [parts[0], parts.slice(1).join(" / ")] : parts;
+          html += `<${tag} class="tl-cell s-${blocks[0].status}"${href} style="${pos}" title="${TL_STATUS[blocks[0].status]}">` +
+            lines.map((t) => `<span>${esc(t)}</span>`).join("") + `</${tag}>`;
+          continue;
+        }
+        // several blocks in one interval ("+" lines): phases stacked in the column, "name / dates" on one line each
+        html += `<div class="tl-stack" style="${pos}">` + blocks.map((b) => {
+          const [name, when] = b.text.split(/\s+\/\s+/);
+          return `<${tag} class="tl-phase s-${b.status}"${href} title="${TL_STATUS[b.status]}"><b>${esc(name || "")}</b>${when ? `<span>${esc(when)}</span>` : ""}</${tag}>`;
+        }).join("") + `</div>`;
+      }
+    });
+
+    const legend = Object.entries(TL_STATUS).map(([k, v]) => `<span><i class="s-${k}"></i>${v}</span>`).join("");
+    const showLegend = body.some((r) => r.cells && r.cells.flat().some((c) => c.status === "done" || c.status === "active"));   // an all-planned outline needs no legend
+    const tracks = `repeat(${n}, minmax(var(--tl-col), 1fr))`;
+    return `<div class="tl${bare ? " tl-bare" : ""}">${showLegend ? `<div class="tl-legend">${legend}</div>` : ""}<div class="tl-scroll">` +
+      `<div class="tl-grid" style="grid-template-columns:${noLabels ? "calc(var(--tl-lw) / 2)" : "var(--tl-label)"} ${tracks}">${html}</div></div></div>`;
+  }
+
+  /* ---------- mermaid diagrams (```mermaid blocks) ----------
+     Loaded only on pages that have a diagram. v11+ is needed for gantt
+     compact mode and `vert` lines. securityLevel "loose" lets
+     `click <id> href "..."` lines work. Re-renders on theme toggle. */
+  const MERMAID_URL = "https://cdn.jsdelivr.net/npm/mermaid@11.17.2/dist/mermaid.esm.min.mjs";
+  let mermaidLib = null;
+  async function renderMermaid(root) {
+    const nodes = [...root.querySelectorAll(".mermaid[data-src]")];
+    if (!nodes.length) return;
+    try {
+      mermaidLib = mermaidLib || (await import(MERMAID_URL)).default;
+      const dark = document.documentElement.dataset.theme === "dark";
+      mermaidLib.initialize({ startOnLoad: false, securityLevel: "loose", theme: dark ? "dark" : "default", fontFamily: "IBM Plex Sans, sans-serif" });
+      nodes.forEach((n) => { n.removeAttribute("data-processed"); n.textContent = n.dataset.src; });
+      await mermaidLib.run({ nodes });
+    } catch (e) {
+      console.error("[docs] mermaid render failed", e);
+    }
+  }
+  new MutationObserver(() => renderMermaid($("#doc"))).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
 
   function enhance(doc, file) {
     // lead paragraph
@@ -237,6 +364,7 @@
     syncSidebar(path);
     renderChrome(path, file);
     buildToc(doc);
+    renderMermaid(doc);
     if (anchor) scrollToAnchor(anchor); else window.scrollTo(0, 0);
   }
   function scrollToAnchor(id) {

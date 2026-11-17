@@ -212,6 +212,10 @@ kbd {
 .doc strong { font-weight: 600; color: var(--ink); }
 .doc hr { margin: 40px 0; border: 0; border-top: 1px solid var(--line); }
 .doc img { max-width: 100%; height: auto; border-radius: var(--r); }
+.mermaid-wrap { margin: 24px 0; overflow-x: auto; }
+.mermaid-wrap .mermaid { min-width: 720px; }
+.mermaid-wrap svg { max-width: none !important; width: 100%; height: auto; }
+.mermaid-wrap .task { cursor: pointer; }
 .doc figure { margin: 24px 0; }
 .doc figcaption { margin-top: 8px; font-size: 13.5px; color: var(--faint); text-align: center; }
 .doc mark { background: var(--mark); color: inherit; padding: 0 2px; border-radius: 3px; }
@@ -233,6 +237,97 @@ kbd {
 .doc th { padding: 10px 16px; text-align: left; font-weight: 600; color: var(--ink); background: var(--soft); border-bottom: 1px solid var(--line); white-space: nowrap; }
 .doc td { padding: 10px 16px; border-top: 1px solid var(--line); vertical-align: top; }
 .doc tbody tr:first-child td { border-top: 0; }
+
+/* ---------- timeline ---------- */
+/* ```timeline blocks (renderTimeline in app.js). One column per gap between
+   milestones, all equal width; each milestone is a vertical line on a column
+   boundary with its label centered on it. The page takes the outline rail's
+   width so the whole chart fits on desktop; narrower screens scroll inside. */
+.page:has(.tl) .toc { display: none; }
+.content:has(.tl) { flex-basis: calc(var(--content-w) + var(--toc-w) + 48px); }
+.doc .tl {
+  --tl-label: 196px;   /* row-label column */
+  --tl-col: 176px;     /* min interval width */
+  --tl-lw: 160px;      /* milestone label width (< --tl-col, so labels never touch) */
+  margin: 28px 0 32px;
+}
+.doc .tl-legend { display: flex; justify-content: flex-end; flex-wrap: wrap; gap: 6px 18px; margin: 0 0 10px; font-size: 12.5px; color: var(--muted); }
+.doc .tl-legend span { display: inline-flex; align-items: center; gap: 7px; }
+.doc .tl-legend i { width: 12px; height: 12px; box-sizing: border-box; border-radius: 3px; border: 1px solid transparent; }
+.doc .tl-scroll { overflow-x: auto; overscroll-behavior-x: contain; }
+.doc .tl-grid {
+  position: relative; display: grid; row-gap: 8px; min-width: min-content;
+  padding: 0 calc(var(--tl-lw) / 2) 32px 0;   /* room for the last label and the Today tag */
+}
+
+/* milestone header: date / name / goal, centered on its line */
+.doc .tl-ms {
+  position: relative; z-index: 3; justify-self: start; align-self: start; width: calc(var(--tl-lw) + 1px); margin: 0 0 18px calc(var(--tl-lw) / -2);
+  padding-bottom: 8px; background: var(--bg);   /* masks the top of its line, so the line hangs from the label */
+  display: flex; flex-direction: column; align-items: center; gap: 1px; text-align: center; line-height: 1.35;
+}
+.doc .tl-ms.is-end { justify-self: end; margin: 0 calc(var(--tl-lw) / -2) 18px 0; }
+.doc .tl-ms time { margin-top: 6px; font-size: 13px; font-weight: 500; color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.doc .tl-ms b { font-size: 14px; font-weight: 600; color: var(--ink); white-space: nowrap; }
+.doc .tl-ms span { font-size: 13px; color: var(--text); white-space: nowrap; }
+.doc .tl-ms.is-first { width: var(--tl-lw); }
+
+/* milestone lines: 1px hairlines; funding (first) is a 2px accent line */
+/* above the gray category bands (z 1), below the milestone headers (z 3) */
+.doc .tl-line { position: relative; z-index: 2; justify-self: start; width: 1px; background: color-mix(in srgb, var(--line-2) 50%, var(--faint)); pointer-events: none; }
+.doc .tl-line.is-end { justify-self: end; }
+
+/* today: thin accent line placed by date inside its interval, behind the cells */
+.doc .tl-track { height: 28px; background: linear-gradient(var(--line-2), var(--line-2)) center / 100% 1px no-repeat; }
+.doc .tl-bare .tl-line { position: relative; margin-bottom: 14px; }   /* ends at the track */
+.doc .tl-bare .tl-line::after { content: ""; position: absolute; left: 50%; bottom: -4.5px; width: 9px; height: 9px; transform: translateX(-50%); border-radius: 50%; background: var(--bg); border: 2px solid var(--ink); box-sizing: border-box; }
+.doc .tl-today { position: relative; justify-self: start; width: 1px; background: var(--uv); pointer-events: none; }
+.doc .tl-today span { position: absolute; bottom: -24px; left: 0; transform: translateX(-50%); padding: 1px 8px; border-radius: 999px; background: var(--uv); color: var(--bg); font-size: 11px; font-weight: 600; white-space: nowrap; }
+
+/* rows */
+/* category divider: a gray band across the whole chart, covering the milestone lines */
+.doc .tl-group {
+  position: relative; z-index: 1; margin-top: 14px; padding: 9px 12px;
+  background: var(--soft); border: 1px solid var(--line); border-radius: var(--r);
+}
+.doc .tl-group span {
+  position: sticky; left: 12px; display: inline-block;
+  font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--ink);
+}
+.doc .tl-label {
+  position: sticky; left: 0; z-index: 2; display: flex; align-items: center; margin-right: 2px; padding: 0 14px 0 0; background: var(--bg);
+  font-size: 13.5px; font-weight: 500; line-height: 1.35;
+}
+.doc .tl-label a { color: var(--ink); text-decoration: none; }
+.doc .tl-label a:hover { color: var(--uv); }
+.doc .tl-cell {
+  position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px;
+  height: 56px; margin: 0 10px; padding: 0 10px; box-sizing: border-box;
+  border: 1px solid var(--line-2); border-radius: var(--r); background: var(--bg);
+  font-size: 12.5px; line-height: 1.45; text-align: center; color: var(--muted);
+}
+/* exactly two lines per cell: each line stays on one line (keep lines short in timeline.md) */
+.doc .tl-cell span { display: block; max-width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.doc a.tl-cell { text-decoration: none; }
+.doc a.tl-cell:hover { border-color: var(--uv); }
+/* phases: several blocks stacked in one column, name left and dates right */
+.doc .tl-stack { position: relative; z-index: 1; display: flex; flex-direction: column; gap: 4px; margin: 0 10px; }
+.doc .tl-phase {
+  display: flex; align-items: center; justify-content: space-between; gap: 6px; height: 28px; padding: 0 8px; box-sizing: border-box;
+  border: 1px solid var(--line-2); border-radius: var(--r); font-size: 12.5px; color: var(--muted); text-decoration: none; white-space: nowrap;
+}
+.doc .tl-phase b { font-weight: 500; color: var(--ink); overflow: hidden; text-overflow: ellipsis; }
+.doc .tl-phase span { flex: none; font-size: 11.5px; font-variant-numeric: tabular-nums; }
+.doc a.tl-phase:hover { border-color: var(--uv); }
+.doc .tl-phase.s-done b, .doc .tl-phase.s-done span { color: var(--bg); }
+.doc .tl-cell.s-done, .doc .tl-phase.s-done, .doc .tl-legend .s-done { background: var(--uv); border-color: var(--uv); color: var(--bg); }
+.doc .tl-cell.s-active, .doc .tl-phase.s-active, .doc .tl-legend .s-active { background: linear-gradient(var(--uv-tint), var(--uv-tint)) var(--bg); border-color: var(--uv); color: var(--ink); }
+.doc .tl-cell.s-planned, .doc .tl-phase.s-planned, .doc .tl-legend .s-planned { background: var(--bg); border-color: var(--line-2); }
+.doc .tl-cell.s-done span:first-child, .doc .tl-cell.s-active span:first-child { font-weight: 500; }
+@media (max-width: 560px) {
+  .doc .tl { --tl-label: 124px; --tl-col: 168px; --tl-lw: 152px; }
+  .doc .tl-legend { justify-content: flex-start; }
+}
 
 /* ---------- hints ---------- */
 .doc .hint { display: flex; gap: 12px; margin: 24px 0; padding: 14px 16px; border-radius: var(--r-lg); background: var(--cbg); border: 1px solid color-mix(in srgb, var(--c) 18%, transparent); }

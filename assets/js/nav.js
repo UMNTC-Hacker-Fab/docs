@@ -29,6 +29,7 @@
       children: [
         { icon: "🏠", title: "Home", path: "home" },
         { icon: "👥", title: "Team", path: "team" },
+        { icon: "🗓️", title: "Fab timeline", path: "timeline" },
         {
           icon: "📝", title: "Updates", path: "updates", dir: true,
           children: [
