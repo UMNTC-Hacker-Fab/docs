@@ -1,1 +1,1 @@
-![i love kanade](kanade.png)
+![i love kanade](img/kanade.png)
