@@ -25,6 +25,21 @@ I'm building the [spinner](#/gen-one/spinner). Below are my timeline and weekly 
 
 **If a part is late:** anything not shipped by 11/24 gets reordered from another US vendor. Parts must arrive by 12/5 to keep 12/12.
 
+### Lead times (checked 11/16)
+
+All Phase 1 parts are in stock and ship from the US, so everything should arrive within 1 week. The only long-lead item is the Phase 2 PCB order, planned at 3 weeks worst case.
+
+| Phase | Vendor | Parts | Stock | Expected arrival | Worst case |
+|---|---|---|---|---|---|
+| 1 | DigiKey | Power supply, switches, DC jack | In stock, ships from Minnesota | 11/19–20 | 1 week |
+| 1 | RMRC | ESC | In stock, same-day ship | 11/20–23 | 1 week |
+| 1 | SunnySky USA | Motor | In stock, ships from Ohio | 11/20–23 | 1 week |
+| 1 | Pololu | 5 V regulator | Same-day ship | 11/20–23 | 1 week |
+| 2 | DigiKey | HV supply, capacitor, resistors | In stock | 2–3 days | 1 week |
+| 2 | JLCPCB | Electrostatic chuck PCBs (from China) | Made to order | 2–3 weeks | **3 weeks** (ordered 1/26, needed 2/16) |
+
+Ordering depends on funding approval; a late approval moves every date by the same amount.
+
 ### Tests
 
 | Test | Method | Pass |
