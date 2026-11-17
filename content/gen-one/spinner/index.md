@@ -5,44 +5,45 @@ The spinner will be used to coat 10 × 10 mm silicon chips with a thin, uniform 
 
 ## Timeline
 
-Updated 11/16/26.
+Updated 11/17/26.
 
-**Phase 1 (V1):** build, test, then push to its limit (10k RPM). **Worst-case deadline: 12/12**, same as the tube furnace.
+Parts are ordered and printing starts when sponsor funding arrives (**day F**). Firmware starts now since it costs nothing.
+
+**Phase 1 (V1):** build, test, then push to its limit (10k RPM). **Worst-case deadline: 12/12**, same as the tube furnace. To keep it, funding must arrive by **11/28**.
 
 **Phase 2 (final version):** 10k RPM with an electrostatic chuck (no tape), done 3/6/27.
 
 | Date | Milestone |
 |---|---|
-| 11/17 | Order parts |
-| 11/17 | Print pocket test coupon |
-| 11/17–20 | Print enclosure |
-| 11/18 | Cut clear lid |
-| 11/17–22 | Firmware (ESP32-S3) |
-| 11/20 | Wire electronics |
-| 11/21–22 | Fit motor and chuck |
-| 11/23 | Bench speed test |
-| 11/24 | Full assembly |
-| 11/25 | PVA test coats |
-| **11/30** | **AZ P4210 coats, V1 done** |
-| 12/1–12/4 | **Limit test: 10k RPM** |
-| 12/5 | Docs updated |
+| 11/17 on | Firmware (ESP32-S3) |
+| F | Order parts; print pocket test coupon |
+| F to F+3 | Print enclosure |
+| F+1 | Cut clear lid |
+| F+3 | Wire electronics (DigiKey parts arrive) |
+| F+4 to F+5 | Fit motor and chuck (motor, ESC, regulator arrive) |
+| F+6 | Bench speed test |
+| F+7 | Full assembly |
+| F+8 | PVA test coats |
+| **F+10** | **AZ P4210 coats, V1 done** |
+| F+11 to F+14 | **Limit test: 10k RPM** |
+| F+15 | Docs updated |
 
-**If a part is late:** anything not shipped by 11/24 gets reordered from another US vendor. Parts must arrive by 12/5 to keep 12/12.
+Example: funding on 11/20 → V1 done 11/30, limit test done 12/4.
+
+**If a part is late:** anything not shipped within 7 days of ordering gets reordered from another US vendor.
 
 ### Lead times (checked 11/16)
 
-All Phase 1 parts are in stock and ship from the US, so everything should arrive within 1 week. The only long-lead item is the Phase 2 PCB order, planned at 3 weeks worst case.
+All Phase 1 parts are in stock and ship from the US, so everything should arrive within 1 week of ordering. The only long-lead item is the Phase 2 PCB order, planned at 3 weeks worst case.
 
-| Phase | Vendor | Parts | Stock | Expected arrival | Worst case |
+| Phase | Vendor | Parts | Stock | Arrival after ordering | Worst case |
 |---|---|---|---|---|---|
-| 1 | DigiKey | Power supply, switches, DC jack | In stock, ships from Minnesota | 11/19–20 | 1 week |
-| 1 | RMRC | ESC | In stock, same-day ship | 11/20–23 | 1 week |
-| 1 | SunnySky USA | Motor | In stock, ships from Ohio | 11/20–23 | 1 week |
-| 1 | Pololu | 5 V regulator | Same-day ship | 11/20–23 | 1 week |
+| 1 | DigiKey | Power supply, switches, DC jack | In stock, ships from Minnesota | 2–3 days | 1 week |
+| 1 | RMRC | ESC | In stock, same-day ship | 3–6 days | 1 week |
+| 1 | SunnySky USA | Motor | In stock, ships from Ohio | 3–6 days | 1 week |
+| 1 | Pololu | 5 V regulator | Same-day ship | 3–6 days | 1 week |
 | 2 | DigiKey | HV supply, capacitor, resistors | In stock | 2–3 days | 1 week |
 | 2 | JLCPCB | Electrostatic chuck PCBs (from China) | Made to order | 2–3 weeks | **3 weeks** (ordered 1/26, needed 2/16) |
-
-Ordering depends on funding approval; a late approval moves every date by the same amount.
 
 ### Tests
 
@@ -52,7 +53,7 @@ Ordering depends on funding approval; a late approval moves every date by the sa
 | Ramp and stop | 1500 RPM/s ramp; open the lid at 6000 RPM | Ramp follows the recipe; motor stops, chip stays in place |
 | Coating | AZ P4210, 30 s at 1000, 2000, 4000, 6000 RPM, 3 chips each. Thickness by stylus profilometer at center and 2 mm from the edge | 4000 RPM within 20% of the datasheet curve; center vs. edge within 5%; 3 chips within 5% |
 
-### Phase 1 limit test: 10k RPM (12/1–12/4)
+### Phase 1 limit test: 10k RPM (F+11 to F+14)
 
 Same motor, ESC and enclosure; no new parts expected.
 
