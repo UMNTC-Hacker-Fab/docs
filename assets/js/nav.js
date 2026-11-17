@@ -40,6 +40,7 @@
             { title: "Bear BlinSchauer", path: "updates/bear-blinschauer", dir: true },
             { title: "Andrew Choi", path: "updates/andrew-choi", dir: true },
             { title: "Natalie Sinn", path: "updates/natalie-sinn", dir: true },
+            { title: "Misha Mickevicius", path: "updates/misha-mickevicius", dir: true}
           ],
         },
       ],
