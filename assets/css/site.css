@@ -267,9 +267,10 @@ kbd {
   display: flex; flex-direction: column; align-items: center; gap: 1px; text-align: center; line-height: 1.35;
 }
 .doc .tl-ms.is-end { justify-self: end; margin: 0 calc(var(--tl-lw) / -2) 18px 0; }
-.doc .tl-ms time { margin-top: 6px; font-size: 13px; font-weight: 500; color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
-.doc .tl-ms b { font-size: 14px; font-weight: 600; color: var(--ink); white-space: nowrap; }
-.doc .tl-ms span { font-size: 13px; color: var(--text); white-space: nowrap; }
+.doc .tl-ms time { margin-top: 8px; font-size: 13.5px; font-weight: 600; color: var(--ink); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.doc .tl-ms .tl-flag { margin: 0 6px 0 0; vertical-align: -1px; color: var(--muted); }
+.doc .tl-ms b { font-size: 15.5px; font-weight: 700; color: var(--ink); letter-spacing: -.01em; white-space: nowrap; }
+.doc .tl-ms span { font-size: 12.5px; color: var(--muted); white-space: nowrap; }
 .doc .tl-ms.is-first { width: var(--tl-lw); }
 
 /* milestone lines: 1px hairlines; funding (first) is a 2px accent line */
@@ -300,6 +301,7 @@ kbd {
   font-size: 13.5px; font-weight: 500; line-height: 1.35;
 }
 .doc .tl-label a { color: var(--ink); text-decoration: none; }
+.doc .tl-label small { display: block; margin-top: 2px; font-size: 12px; font-weight: 400; color: var(--muted); white-space: nowrap; }
 .doc .tl-label a:hover { color: var(--uv); }
 .doc .tl-cell {
   position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px;

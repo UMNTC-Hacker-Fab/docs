@@ -134,6 +134,9 @@
     // machines: " / " separates several, one per line; pad every header to the same count so dates stay level
     ms.forEach((m) => { m.machines = m.goal ? m.goal.split(/\s+\/\s+/) : []; });
     const rows = Math.max(1, ...ms.map((m) => m.machines.length));
+    // each machine's due date = the milestone that lists it ("Functional by Nov 30" under its row name)
+    const dueBy = {};
+    ms.forEach((m) => m.machines.forEach((x) => { dueBy[x.toLowerCase()] = `${MON[m.date.getMonth()]} ${m.date.getDate()}`; }));
 
     const bare = !body.length;                           // milestones only: draw a track row instead of machine rows
     const noLabels = body.every((r) => r.group !== undefined || !r.name);   // no row names: drop the label column
@@ -154,7 +157,7 @@
       html += `<div class="tl-ms${cls}" style="grid-row:1;${at(i)}">` +
         (m.label ? `<b>${esc(m.label)}</b>` : "") +
         Array.from({ length: rows }, (_, k) => `<span>${m.machines[k] ? esc(m.machines[k]) : "&nbsp;"}</span>`).join("") +
-        `<time datetime="${iso}">${esc(date)}</time></div>`;
+        `<time datetime="${iso}">${m.machines.length ? `<svg class="tl-flag" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="Done by"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><path d="M4 22v-7"/></svg>` : ""}${esc(date)}</time></div>`;   // milestones with machines: finish flag before the date
       html += `<div class="tl-line${cls}" style="grid-row:1 / ${end};${at(i)}" aria-hidden="true"></div>`;
     });
 
@@ -172,8 +175,10 @@
       if (r.group !== undefined) { html += `<div class="tl-group" style="${gr};grid-column:1 / -1"><span>${esc(r.group)}</span></div>`; return; }
       // hairline between two machines in the same category
       if (ri > 0 && body[ri - 1].group === undefined) html += `<div class="tl-sep" style="${gr};grid-column:1 / -1" aria-hidden="true"></div>`;
-      if (r.name) html += `<div class="tl-label" style="${gr};grid-column:1">` +
-        (r.route ? `<a href="#/${esc(r.route)}">${esc(r.name)}</a>` : `<span>${esc(r.name)}</span>`) + `</div>`;
+      const due = r.name && dueBy[r.name.toLowerCase()];
+      if (r.name) html += `<div class="tl-label" style="${gr};grid-column:1"><div>` +
+        (r.route ? `<a href="#/${esc(r.route)}">${esc(r.name)}</a>` : `<span>${esc(r.name)}</span>`) +
+        (due ? `<small>Functional by ${esc(due)}</small>` : "") + `</div></div>`;
       const tag = r.route ? "a" : "div", href = r.route ? ` href="#/${esc(r.route)}"` : "";   // cells link to the machine's page
       const phased = r.cells.some((cell) => cell.length > 1);
       for (let c = 0; c < n; c++) {
