@@ -35,6 +35,7 @@
             { title: "Example Member", path: "updates/example-member", dir: true },
             { title: "Leonard Jin", path: "updates/leonard-jin", dir: true },
             { title: "Arjun Senthilvel", path: "updates/arjun-senthilvel", dir: true },
+            { title: "Wenteng Li", path: "updates/wenteng-li", dir: true },
             { title: "Sputterer Blog", link: "gen-one/sputterer/blog" },
           ],
         },
