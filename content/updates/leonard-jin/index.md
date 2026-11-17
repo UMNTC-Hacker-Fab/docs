@@ -14,7 +14,7 @@ The SM1A3 objective to SM1 thread adapters are arriving at the end of November, 
 ![Main frame side view](img/main_frame_side_view.png)
 ![Main frame top view](img/main_frame_top_view.png)
 
-Worked on modifying main frame created by Toby from CMU Hacker Fab for the XYZ stage in V2.1+, this frame is for the [Diffraction Limited nanopositioner](https://github.com/0x23/MicroManipulatorStepper
+Worked on modifying main frame created by Toby from CMU Hacker Fab for the XYZ stage in V2.1+, this frame is for the [Diffraction Limited nanopositioner](https://github.com/0x23/MicroManipulatorStepper)
 
 ![Mech XYZ front view](img/mech_xyz_front_view.png)
 ![Mech XYZ side view](img/mech_xyz_side_view.png)
