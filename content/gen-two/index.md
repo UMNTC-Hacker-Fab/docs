@@ -7,7 +7,7 @@ Gen Two machines push the capabilities of our fab: higher yield, better repeatab
 - 🪏 ICP Reactive Ion Etcher
 - 🔊 Ultrasonic Cleaner
 - 🔬 Electron Microscope
-- 🦾 Wafer Robotic Arm | | #/gen-two/wafer-arm
+-🦾 Wafer Robotic Arm
 - 🏝️ Microenvironment Clean Room
 - ⚗️ Dopant Synthesis
 - 🧪 Polymer Synthesis
