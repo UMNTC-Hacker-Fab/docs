@@ -2,8 +2,8 @@
 I'm building the tube furnace, below are my weekly updates, tube furnace information, and timelines.
 
 ## Information
-**Power**: 3.75A at 208V, uses ~780W
-**Temp**: 1100C achievable in ~15-20min w/ 3” fiber insulate layer
+**Power**: 3.75A at 208V, uses ~780W \
+**Temp**: 1100C achievable in ~15-20min w/ 3” fiber insulate layer \
 **Wire statistics**: 508.09in, 81 turns, pitch of 1.9mm
 
 ## Timeline
