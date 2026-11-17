@@ -15,7 +15,6 @@ Goal: Pattern test lines on S1813 by end of November
 | Buffer | Wed Nov 25 – Mon Nov 30 |
 
 ### Current Progress
-- All BOM components arrived
 - CAD assembly in Solidworks
 - Tube lens, camera, and objective physical assembly
 - Basler Pylon camera software installed
