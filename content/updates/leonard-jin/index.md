@@ -7,13 +7,21 @@ I'm building the maskless lithography stepper. I'm also leading the gen one fab 
 ![Stepper optics](img/stepper_optics.png)
 ![Mitutoyo Plan Apo 10x objective](img/mitoyo_apo10_objective.png)
 ![Finite vs infinite conjugate objective](img/finite_vs_infinite_conjugate_objective.png)
+
+The SM1A3 objective to SM1 thread adapters are arriving at the end of November, so to get around this blocker I found that the 10x Mitutoyo objective in our probe station had SM1 threads and can replace the 10x PLAN objective from Edmund Optics. The main difference is the Mitutoyo is an infinite conjugate objective that is designed to receive collimated light from a lens, but it can still work without the collimator.
+
 ![Main frame front view](img/main_frame_front_view.png)
 ![Main frame side view](img/main_frame_side_view.png)
 ![Main frame top view](img/main_frame_top_view.png)
+
+Worked on modifying main frame created by Toby from CMU Hacker Fab for the XYZ stage in V2.1+, this frame is for the [Diffraction Limited nanopositioner]([nanopositioner](https://github.com/0x23/MicroManipulatorStepper
+
 ![Mech XYZ front view](img/mech_xyz_front_view.png)
 ![Mech XYZ side view](img/mech_xyz_side_view.png)
 ![Project assembly bottom view](img/project_assem_bottom_view.png)
 ![Project assembly front view](img/project_assem_front_view.png)
+
+Building towards a complete assembly for the stepper V2.1+.
 
 ## Weekly Update #1 (11/9/26)
 - TI Projector arrived
