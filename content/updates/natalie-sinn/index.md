@@ -4,6 +4,7 @@
 
 <details>
   <summary>*＊✿ All my flyers ✿＊*</summary>
+</details>
 
 ## The Wonderful Logistics Team 
 
