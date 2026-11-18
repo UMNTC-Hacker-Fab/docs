@@ -7,6 +7,7 @@ Arjun Senthilvel | | #/updates/arjun-senthilvel
 Wenteng Li | | #/updates/wenteng-li
 Bear BlinSchauer | | #/updates/bear-blinschauer
 Misha Mickevicius | | #/updates/misha-mickevicius
+Hadi Ahmad | | #/updates/hadi-ahmad
 ```
 
 ## Create a file
