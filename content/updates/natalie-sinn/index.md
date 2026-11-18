@@ -4,9 +4,7 @@
 
 <details>
   <summary>*＊✿ All my flyers ✿＊*</summary>
-<div class="imagecarousel">
-  <img src="img/10.23-flyer" width="400" alt="image-description"/> <img src="img/11.06-flyer" width="400" alt="image-description"/> <img src="img/11.20-flyer" width="400" alt="image-description"/>
-</div>
+  <img src="img/11.20-flyer" width="300" alt="image-description"/> <img src="img/11.06-flyer" width="300" alt="image-description"/> <img src="img/10.23-flyer" width="300" alt="image-description"/>  
 </details>
 
 ## The Wonderful Logistics Team 
