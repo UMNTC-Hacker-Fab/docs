@@ -34,7 +34,7 @@ Chief Engineer: Andrew Choi
 | Project | Owner |
 |---|---|
 | ICP Reactive Ion Etcher | Davit Sandoyan |
-| Ultrasonic Cleaner | Hadi Ahmad |
+| [Ultrasonic Cleaner](#/gen-two/ultrasonic-cleaner) | [Hadi Ahmad](#/updates/hadi-ahmad) |
 | Electron Microscope | Isaac Holmdahl |
 | Wafer Robotic Arm | Misha Mickevicius |
 | Microenvironment Clean Room | Alvin |

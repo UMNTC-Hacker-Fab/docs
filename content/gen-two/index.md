@@ -5,7 +5,7 @@ Gen Two machines push the capabilities of our fab: higher yield, better repeatab
 ## Planned Machines
 
 - 🪏 ICP Reactive Ion Etcher
-- 🔊 Ultrasonic Cleaner
+- 🔊 [Ultrasonic Cleaner](#/gen-two/ultrasonic-cleaner)
 - 🔬 Electron Microscope
 - 🦾 Wafer Robotic Arm
 - 🏝️ Microenvironment Clean Room
