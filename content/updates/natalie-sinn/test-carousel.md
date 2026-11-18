@@ -23,15 +23,15 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
       <div class="item active">
-        <img src="10.23-flyer.jpg" alt="Los Angeles" style="width:100%;">
+        <img src=img/"10.23-flyer.jpg" alt="Los Angeles" style="width:100%;">
       </div>
 
       <div class="item">
-        <img src="11.06-flyer.jpg" alt="Chicago" style="width:100%;">
+        <img src="img/11.06-flyer.jpg" alt="Chicago" style="width:100%;">
       </div>
     
       <div class="item">
-        <img src="11.20-flyer.jpg" alt="New york" style="width:100%;">
+        <img src=img/"11.20-flyer.jpg" alt="New york" style="width:100%;">
       </div>
     </div>
 
