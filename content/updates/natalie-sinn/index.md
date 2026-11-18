@@ -2,6 +2,9 @@
 
 ⋆˙⟡ ⋆.˚ ⊹₊⟡ ⋆ Hello! I'm the <span style="color: #2277CC;">events and marketing</span> director, and also the Logistics lead :) My page will have weekly updates on all of logistics! ⋆˙⟡ ⋆.˚ ⊹₊⟡ ⋆
 
+<details>
+  <summary>*＊✿ All my flyers ✿＊*</summary>
+
 ## The Wonderful Logistics Team 
 
 <span style="color: #dc143c;">Finance Director:</span> Nathan Van Berkom
