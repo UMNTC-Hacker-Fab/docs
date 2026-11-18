@@ -9,9 +9,9 @@ The tube furnace will be used for thermal oxidation, dopant diffusion, and annea
 |-------|----------------------------------------------|
 | 11/23 | Funding arrives, parts ordered               |
 | 11/30 | Most parts arrive, waiting on custom tube    |
-| 12/07 | Maximum lead time for quartz tube            |
-| 12/08 | Wire wrapped, airdrying of refractory cement |
-| 12/10 | Wiring of control elements, final touches    |
+| 12/07 | Maximum lead time for quartz tube (begin installation of other parts) |
+| 12/08 | Wire wrapped, airdrying of refractory cement, steel bent into shape for enclosure |
+| 12/10 | Wiring of control elements, wire cutoffs into loop    |
 | 12/12 | Finish testing for safety, complete build    |
 
 **Tube Furnace BOM**
