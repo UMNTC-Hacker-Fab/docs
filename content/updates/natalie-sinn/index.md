@@ -4,12 +4,14 @@
 
 ## The Wonderful Logistics Team 
 
-<span style="color: #dd3300﻿﻿;">Finance Director:</span>
-<span style="color: #cc4455﻿﻿;">Faculty and Sponsor Outreach:</span>
-<span style="color: #118833;">Grants and Funding Director:</span>
-<span style="color: #9944ff﻿;">Website Developer:</span>
- 
+<span style="color: red﻿﻿;">Finance Director:</span> Nathan Van Berkom
 
-<p>This is <span style="color: red;">red text</span> and this is <span style="color: #1a7f37;">green text</span>.</p>
+<span style="color: coral﻿﻿;">Faculty and Sponsor Outreach:</span> Rhys Peene, Alexander Weimer
+
+<span style="color: #118833;">Grants and Funding Director:</span> Sophia Pung, Ayaan Bhola
+
+<span style="color: #9944ff;">Website Developer:</span> Isaac
+
+
 
 
