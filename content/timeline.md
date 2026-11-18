@@ -40,6 +40,11 @@ planned |
 planned |
 planned |
 
+## Doping Synthesis | gen-two/doping-synthesis
+planned | Create safety information / Nov 17-24
+planned | Create prelab 1-making solution / Nov 24-Dec 18
+planned | Preform lab 1-making solution / Jan 12-Feb 16
+
 # Sputtering + Etching
 ## DC & RF Magnetron Sputterer | gen-one/sputterer#timeline
 planned |
