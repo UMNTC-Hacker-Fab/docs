@@ -70,6 +70,7 @@
       section: "Gen Two Fab",
       children: [
         { icon: "📈", title: "Gen Two Overview", path: "gen-two", dir: true },
+        { icon: "🦾", title: "Wafer Arm", path:"gen-two/wafer-arm", dir: true}
       ],
     },
     {
