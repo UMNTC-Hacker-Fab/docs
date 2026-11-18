@@ -20,4 +20,6 @@
 
 <span style="color: #118833;">Grants and Funding:</span> Sophia has signed up for a meeting with Lightcone Infrastructures on Nov. 25th! 
 
-<span style="color: #2277CC;">events and marketing:</span> Chips (the food kind) and soda have been secured for our event this Friday (20, Nov) and the attendance form has been created. I've also set up the GitHub documentation page (what you're reading) and learned how to colour text with HTML! 
+<span style="color: #2277CC;">Events and Marketing:</span> Chips (the food kind) and soda have been secured for our event this Friday (20, Nov) and the attendance form has been created. I've also set up the GitHub documentation page (what you're reading) and learned how to colour text with HTML! 
+
+<span style="color: #9944ff;">Website Development:</span> Isaac and I have been in the talks about ideas for a new, creative landing page for the club's main website! Let's see what we come up with in the future ~
