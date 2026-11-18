@@ -4,36 +4,8 @@
 
 <details>
   <summary>*＊✿ All my flyers ✿＊*</summary>
-.imagecarousel {
-  position: relative;
-  height: 233px;
-  margin-bottom: 30px;
-  display: flex;
-  width: fit-content;
-  gap: 20px;
-}
-
-.imagecarousel img {
-  margin: 0px 0px;
-  box-shadow: 2px 2px 8px #8a8a8a;
-}
-
-.imagecarousel {
-  animation: bannermove 50s linear infinite;
-}
-
-@keyframes bannermove {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
 <div class="imagecarousel">
-  <img src="img/10.23-flyer" width="400" alt="image-description"/>
-  <img src="img/11.06-flyer" width="400" alt="image-description"/>
-  <img src="img/11.20-flyer" width="400" alt="image-description"/>
+  <img src="img/10.23-flyer" width="400" alt="image-description"/> <img src="img/11.06-flyer" width="400" alt="image-description"/> <img src="img/11.20-flyer" width="400" alt="image-description"/>
 </div>
 </details>
 
