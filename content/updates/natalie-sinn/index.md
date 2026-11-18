@@ -4,6 +4,9 @@
 
 <details>
   <summary>*＊✿ All my flyers ✿＊*</summary>
+  <img src="10.23-flyer" alt="image-description"/>
+  <img src="11.06-flyer" alt="image-description"/>
+  <img src="11.20-flyer" alt="image-description"/>
 </details>
 
 ## The Wonderful Logistics Team 
