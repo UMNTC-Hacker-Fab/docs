@@ -15,7 +15,7 @@
 
 <span style="color: #118833;">Grants and Funding Director:</span> Sophia Pung, Ayaan Bhola
 
-<span style="color: #9944ff;">Website Developer:</span> Isaac
+<span style="color: #9944ff;">Website Developer:</span> Isaac Holmdahl
 
 ## Weekly Update #1 (17, Nov. 2026)
 
