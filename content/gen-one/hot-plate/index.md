@@ -1,3 +1,11 @@
 # Hot Plate
-- Working on creating a PCB design
-- Simulating various dimensions to analyze how the heat is spreading
+
+
+
+## Week 11/21/2026
+PCB Design:
+
+
+# Week 11/14/2026
+Simulations:
+
