@@ -73,7 +73,7 @@
       children: [
         { icon: "📈", title: "Gen Two Overview", path: "gen-two", dir: true },
         { icon: "🦾", title: "Wafer Arm", path:"gen-two/wafer-arm", dir: true},
-         { icon: "⚡", title: "Dopant Synthesis", path: "dopant-synthesis", dir: true }
+        { icon: "⚡", title: "Dopant Synthesis", path: "gen-two/dopant-synthesis", dir: true},
       ],
     },
     {
