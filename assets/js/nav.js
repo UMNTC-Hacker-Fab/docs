@@ -42,6 +42,7 @@
             { title: "Natalie Sinn", path: "updates/natalie-sinn", dir: true },
             { title: "Misha Mickevicius", path: "updates/misha-mickevicius", dir: true},
             { title: "Hadi Ahmad", path: "updates/hadi-ahmad", dir: true },
+            { title: "Matt Reed", path: "updates/matt-reed", dir: true },
           ],
         },
       ],
@@ -71,7 +72,8 @@
       section: "Gen Two Fab",
       children: [
         { icon: "📈", title: "Gen Two Overview", path: "gen-two", dir: true },
-        { icon: "🦾", title: "Wafer Arm", path:"gen-two/wafer-arm", dir: true}
+        { icon: "🦾", title: "Wafer Arm", path:"gen-two/wafer-arm", dir: true},
+         { icon: "⚡", title: "Dopant Synthesis", path: "dopant-synthesis", dir: true }
       ],
     },
     {
