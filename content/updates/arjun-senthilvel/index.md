@@ -9,3 +9,8 @@ I'm building the tube furnace, below are my weekly updates and tube furnace info
 ## Weekly Update #1 (Nov. 16, 2026)
 - Fab2 meeting completed, next action item: getting timeline and extra docs done today.
 - Funding required: ~$600
+
+## Weekly Update #1 (Nov. 23, 2026)
+- Timeline and extra documentation completed, and placed in the tube furnace directory.
+- Unfortunately had a lot of exams last week, couldn't get much else done :(
+- **Next steps**: Wait on Fab2 meeting to obtain funding, possibly start work on PID control code?
