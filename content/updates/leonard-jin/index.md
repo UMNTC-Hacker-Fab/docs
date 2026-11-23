@@ -2,6 +2,11 @@
 
 I'm building the maskless lithography stepper. I'm also leading the gen one fab to design and assemble the machines by the end of Fall 2026 semester.
 ## Weekly Update #3 (11/23/26)
+Last week I was busy with exams so I didn't get much done.
+
+I setup a meeting with Basler Wednesday morning to discuss camera software. This week I'll work on finish the stepper and microplotter frames.
+
+Ro and Emilea from Fab2 are currently talking with Alexander and others at the company about the sponsorship. He said we'll hear back from them on the week of 11/30 - 12/4.
 
 ## Weekly Update #2 (11/16/26)
 ![Beamsplitter mirror](img/beamsplitter_mirror.png)
