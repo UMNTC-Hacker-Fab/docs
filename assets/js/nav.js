@@ -61,6 +61,10 @@
               ["⚠️", "Safety", "safety"],
             ]),
             m("📐", "Theory", "gen-one/sputterer/theory"),
+            m("📰", "Blog", "gen-one/sputterer/blog", [
+              ["📝", "Weekly Update #2 (11/23/26)", "2026-11-23"],
+              ["📝", "Weekly Update #1 (11/16/26)", "2026-11-16"],
+            ]),
           ],
         },
         m("🔥", "Tube Furnace", "gen-one/tube-furnace"),
