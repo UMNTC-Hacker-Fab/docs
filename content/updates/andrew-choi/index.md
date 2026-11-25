@@ -2,6 +2,12 @@
 
 I am building the Inkjet Microplotter and I am also the Gen 2 Fab lead.
 
+## Weekly Update #2 (11/25/2026)
+
+Camera parts came and the camera itself also came.
+
+Working on soldering as we speak...
+
 ## Weekly Update #1 (11/17/2026)
 
 ![PCB stencil](img/osh_park_stencil.png)
