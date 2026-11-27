@@ -6,8 +6,11 @@ Leonard Jin | | #/updates/leonard-jin
 Arjun Senthilvel | | #/updates/arjun-senthilvel
 Wenteng Li | | #/updates/wenteng-li
 Bear BlinSchauer | | #/updates/bear-blinschauer
+Andrew Choi | | #/updates/andrew-choi
+Natalie Sinn | | #/updates/natalie-sinn
 Misha Mickevicius | | #/updates/misha-mickevicius
 Hadi Ahmad | | #/updates/hadi-ahmad
+Matt Reed | | #/updates/matt-reed
 ```
 
 ## Create a file
